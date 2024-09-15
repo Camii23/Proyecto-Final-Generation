@@ -1,14 +1,10 @@
-# Proyecto-Final-Generation
+# Blog Gamer 2024
 
-Este es el repositorio donde vamos a trabajar nuestro proyecto final de Generation (Ecommerce)
-# Bio Bug Solutions
- 
-BioBug Solutions is an e-commerce platform offering sustainable biological control agents for organic agriculture. We provide farmers with eco-friendly solutions to manage pests and reduce reliance on harmful pesticides, promoting healthier ecosystems and improved crop productivity.
- 
+**Blog Gamer 2024** is a platform focused on gaming news, reviews, and guides. It provides gamers with up-to-date information on the latest trends and releases in the gaming world.
+
 ## Members:
- 
-  * Camila Jimenez
-  * Esteban Cano
-  * Emmanuel Silano
+
   * Mayra Santos
- 
+  * Diana Rodriguez
+  * Mario Acendra
+  * John Alexander Forero

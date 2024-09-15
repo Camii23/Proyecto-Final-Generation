@@ -1,0 +1,63 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("./img/background/fondo\ quienes\ somos.png");
+  background-size: cover;
+  background-position: center; 
+  width: 90vw;
+  height: 50vh;
+  background-repeat: no-repeat;
+}
+
+.tarjeta {
+  background-color:#FFFEF9 ;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.182);
+  margin-bottom: 40px;
+  margin-right: 10px;
+}
+.tarjeta img {
+  width: 150px;
+  padding: 10px;
+}
+.contenedor-equipo {
+  padding-top: 60px;
+  align-items: center;
+}
+.tarjeta h5 {
+  color: #020202;
+  font-weight: bold;
+}
+.tarjeta p {
+  font-size: small;
+  padding: 10px;
+}
+
+
+.container {
+  align-items: center;
+}
+.divider {
+  border-left: 1.5px solid #ccc;
+}
+.titulo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #616F5D;
+  margin-top: 25px;
+}
+.subtitulo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #000000;
+}
+.texto {
+  font-size: 18px;
+  color: #6c757d;
+}
+span{
+  color: #5b5f56;
+  font-weight: bold;
+  font-size: 19px;
+}

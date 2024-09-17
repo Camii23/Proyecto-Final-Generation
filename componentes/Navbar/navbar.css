@@ -19,7 +19,7 @@ header{font-family: 'Poppins', sans-serif !important;}
 .p-alert{margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color);}
 .navbar{background-color: var(--nav-color-bg); }
 .box{margin-left: 8.5vw;}
-.nav-link{font-size: 0.96git rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
+.nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
 .container-search{width: 50vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 4px 6px; margin-right: 2.4rem;}
 .search-icon{background-color: var(--search-bg-color);}
 .search{border: none; width: 100%; background-color: var(--search-bg-color);}

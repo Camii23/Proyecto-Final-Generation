@@ -1,0 +1,75 @@
+
+/*=============================== Navbar - Please do not touch ================================================================================*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/*Poppins Font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --alert-color:#616F5D;
+    --letter-color: white;
+    --nav-color-bg:#C4C8B5;
+    --search-bg-color:#F0F0F0;
+}
+header{font-family: 'Poppins', sans-serif !important;}
+.header-alert{display: flex; background-color: var(--alert-color); color: var(--letter-color);
+            justify-content: end;  padding-right: 7.3vw !important; align-items: center;
+}
+.navbar-brand{font-size: 1.7rem !important; padding-top: 2px !important; padding-bottom: 2px !important;}
+.alert-link{color: var(--letter-color); font-weight: 400 !important;}
+.p-alert{margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important;}
+.navbar{background-color: var(--nav-color-bg); }
+.box{margin-left: 8.5vw;}
+.nav-link{font-size: 1rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
+.container-search{width: 50vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 4px 6px; margin-right: 2.4rem;}
+.search-icon{background-color: var(--search-bg-color);}
+.search{border: none; width: 100%; background-color: var(--search-bg-color);}
+.search:focus{ outline: none; background-color: var(--search-bg-color);}
+.cart-icon{margin-right: 14px;}
+.dropdown-menu{background-color: var(--nav-color-bg) !important; border-color: transparent !important;}
+.navbar-toggler{ border-color: transparent !important;}
+.navbar-toggler:focus{box-shadow: none !important;}
+
+@media (max-width: 1101px){
+    .container-search{
+        width: 40vw !important;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 765px){
+    .navbar{background-color: white; }
+    .bag-icon{display: flex !important;}
+    .container-menu{display: flex !important; flex-direction: row-reverse !important; width: 100%; justify-content: space-between; }
+    .menu-link{flex-direction: column; align-items: center;}
+    .box{margin-left: 0px;}
+    .search-shopping{flex-direction:column-reverse;}
+    .shopping-acceso{flex-direction: column; align-items: center; font-size: 1.2rem;}
+    .nav-link{font-size: 1.2rem !important; letter-spacing: 0.18rem;}
+    .cart-icon{margin-bottom: 8px; text-decoration: none;}
+    .acceso-icon{margin-bottom: 8px; text-decoration: none;}
+    .cart-icon::after{content: "Mi carrito"; text-decoration: none; color: black; margin-left: 8px;}
+    .acceso-icon::after{content: "Iniciar sesión"; text-decoration: none !; color: black; margin-left: 8px;}
+    .container-search{width: 100% !important;}
+    .dropdown-menu{background-color: transparent !important;}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .search-menu{display: inline !important; margin-right: 0.6rem; };
+    .search-menu .bi-search{color: black;}
+    .search-menu a{font-size: 18px; color: black; position: absolute; top: 12px; right: 150.5px;}
+    .shopping-acceso-menu{display: flex !important;}
+    .container-menu{width: 100%; display: flex; justify-content: space-between;}
+    .container-shopping-acceso-menu{display: flex; align-items: center;}
+    .navbar-toggler{margin-left: .8rem;}
+   
+    .nav-container{flex-direction: column-reverse !important;}
+    .box{ display: none; margin-top: 8px;margin-bottom: 4px; margin-left: 0px;}
+    .search-shopping{justify-content: space-between;}
+    .container-search{width: 60vw !important; margin-right: 6px;}
+   
+    .menu-link{justify-content: center;}
+    .nav-link{margin: 0px 30px;}
+}
+
+/*============================================ Eend - Navbar =========================================================*/
+

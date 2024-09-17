@@ -11,15 +11,15 @@
     --search-bg-color:#F0F0F0;
 }
 header{font-family: 'Poppins', sans-serif !important;}
-.header-alert{display: flex; background-color: var(--alert-color); color: var(--letter-color);
+.header-alert{display: flex; background-color: var(--alert-color); color: var(--letter-color) !important;
             justify-content: end;  padding-right: 7.3vw !important; align-items: center;
 }
 .navbar-brand{font-size: 1.7rem !important; padding-top: 2px !important; padding-bottom: 2px !important;}
 .alert-link{color: var(--letter-color); font-weight: 400 !important;}
-.p-alert{margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important;}
+.p-alert{margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color);}
 .navbar{background-color: var(--nav-color-bg); }
 .box{margin-left: 8.5vw;}
-.nav-link{font-size: 1rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
+.nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
 .container-search{width: 50vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 4px 6px; margin-right: 2.4rem;}
 .search-icon{background-color: var(--search-bg-color);}
 .search{border: none; width: 100%; background-color: var(--search-bg-color);}

@@ -1,20 +1,21 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url("./img/background/fondo\ quienes\ somos.png");
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   width: 90vw;
   height: 50vh;
   background-repeat: no-repeat;
 }
 
 .tarjeta {
-  background-color:#FFFEF9 ;
+  background-color: #fffef9;
   display: flex;
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.182);
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+  /*Revisar este m-b / m-r*/
   margin-right: 10px;
 }
 .tarjeta img {
@@ -34,7 +35,6 @@ body {
   padding: 10px;
 }
 
-
 .container {
   align-items: center;
 }
@@ -44,7 +44,7 @@ body {
 .titulo {
   font-size: 18px;
   font-weight: bold;
-  color: #616F5D;
+  color: #616f5d;
   margin-top: 25px;
 }
 .subtitulo {
@@ -56,8 +56,27 @@ body {
   font-size: 18px;
   color: #6c757d;
 }
-span{
+span {
   color: #5b5f56;
   font-weight: bold;
   font-size: 19px;
+}
+
+/* Info Cards */
+
+.card {
+  background-color: #fffef9;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.182);
+}
+
+.card-title {
+  font-size: x-large;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card-text {
+  font-size: medium;
+  color: #6c757d;
 }

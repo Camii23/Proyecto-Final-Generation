@@ -73,19 +73,16 @@ span {
 
 /* Info Cards */
 
-.card {
-  background-color: #fffef9;
+.imagencard img{
+  width: 30rem;
+  position: relative;
+  top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.781);
+  border-radius: 30px;
+  transition: transform 0.7s ease;
+}
+.card{
+  background-color: #FFFEF9;
   border-radius: 20px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.182);
-}
-
-.card-title {
-  font-size: x-large;
-  font-weight: bold;
-  color: #000000;
-}
-
-.card-text {
-  font-size: medium;
-  color: #6c757d;
 }

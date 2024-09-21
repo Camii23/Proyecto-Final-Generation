@@ -2,3 +2,56 @@ body {
     font-family: 'Poppins', sans-serif;
 
 }
+/* <!-- Contact Left-side form -->*/
+.image{
+    background-image: url('../img/background/sobrenosotros.jpg'); /* Ruta a la imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+}
+.card-title {
+    margin-top: 20px;
+    color: #20503c;
+    height: 7%;
+    margin-left: 20px;
+}
+
+.card-text {
+    font-size: 1.1em;
+    margin-bottom: 50px;
+    padding: 15px;
+}
+
+.contact-info p{
+    margin-bottom: 30px;
+}
+
+.contact-info i{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    min-height: 30px;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 8px 15px 0;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    color: black;
+    margin-top: 40%;
+   
+}
+.social-icons {
+    margin-left: 30px;
+}
+
+.social-icons a:hover {
+    background-color: #617842;
+}
+
+ 

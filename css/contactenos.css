@@ -1,4 +1,85 @@
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
 
+/* <!-- Contact Right-side form -->*/
+.input-contact-form {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid rgba(97, 111, 93, 0.85);
+}
+
+.btn-submit-contact {
+  background-color: #617842;
+  color: #ffffff;
+  border: 2px solid #617842;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit-contact:hover {
+  background-color: #616f5d;
+  border: 2px solid #617842;
+  color: #ffffff;
+}
+
+.form-floating input:focus,
+.form-floating textarea:focus {
+  border-color: #617842;
+  box-shadow: 0 0 5px rgba(97, 120, 66, 0.5);
+}
+
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label,
+.form-floating input:focus ~ label,
+.form-floating textarea:focus ~ label {
+  color: #617842;
+  font-weight: lighter;
+  font-size: small;
+  transform: translateY(-100%);
+}
+
+.text-area-contact {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid rgba(97, 111, 93, 0.85);
+}
+
+.text-area-contact:focus {
+  border-color: #617842;
+  box-shadow: 0 0 5px rgba(97, 120, 66, 0.5);
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #617842;
+  background-color: transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 5px rgba(97, 120, 66, 0.95);
+  border-color: #617842;
+}
+
+.form-check-input:checked {
+  background-color: rgba(97, 111, 93, 0.85);
+  border-color: #617842;
+}
+
+.form-check-label {
+  color: #333;
+  font-weight: normal;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.form-check-input:hover {
+  border-color: #9ba17b;
+}
+
+.form-check-input:checked ~ .form-check-label {
+  color: #617842;
 }

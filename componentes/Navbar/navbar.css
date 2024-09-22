@@ -47,7 +47,7 @@ header{font-family: 'Poppins', sans-serif !important;}
     .nav-link{font-size: 1.2rem !important; letter-spacing: 0.18rem;}
     .cart-icon{margin-bottom: 8px; text-decoration: none;}
     .acceso-icon{margin-bottom: 8px; text-decoration: none;}
-    .cart-icon::after{content: "Mi carrito"; text-decoration: none; color: black; margin-left: 8px;}
+    .cart-icon::after{content: ""; text-decoration: none; color: black; margin-left: 8px;}
     .acceso-icon::after{content: "Iniciar sesión"; text-decoration: none !; color: black; margin-left: 8px;}
     .container-search{width: 100% !important;}
     .dropdown-menu{background-color: transparent !important;}

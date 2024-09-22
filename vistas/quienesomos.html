@@ -10,7 +10,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- CSS estilos -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/quienesomos.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             <h5>Camila Jiménez</h5>
             <p>Desarrolladora full-stack especializada en diseño front-end y experiencia de usuario.</p>
           </div>
-          <img src="./img/members/camila.png" alt="">
+          <img src="../img/members/camila.png" alt="">
         </div>
       </div>
       <div class="col-lg-4">
@@ -49,7 +49,7 @@
             <h5>Esteban Cano</h5>
             <p>Desarrollador full-stack enfocado en arquitectura back-end y optimización móvil.</p>
           </div>
-          <img src="./img/members/esteban.png" alt="">
+          <img src="../img/members/esteban.png" alt="">
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
             <h5>Mayra Santos</h5>
             <p>Desarrolladora full-stack centrado en diseño responsive y gestión de bases de datos.</p>
           </div>
-          <img src="./img/members/mayra.png" alt="">
+          <img src="../img/members/mayra.png" alt="">
         </div>
       </div>
       <div class="col-lg-4">
@@ -69,7 +69,7 @@
             <h5>Emmanuel Silano</h5>
             <p>Desarrollador full-stack especializado en lógica del servidor e integración de APIs.</p>
           </div>
-          <img src="./img/members/emmanuel.png" alt="">
+          <img src="../img/members/emmanuel.png" alt="">
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@
           <div class="misionvision col-md-10 mb-5">
             <div class="row align-items-center">
               <div class="col-12 col-lg-6 col-md-12 imagencard">
-                <img src="./img/mision-vision/mision.jpg" alt="Imagen Misión" class="img-fluid shadow">
+                <img src="../img/mision-vision/mision.jpg" alt="Imagen Misión" class="img-fluid shadow">
               </div>
               <div class="col-12 col-lg-6 col-md-12 p-5">
                 <h2>Misión</h2>
@@ -117,7 +117,7 @@
                 </p>             
               </div>
               <div class="col-12 col-lg-6 col-md-12 imagencard">
-                <img src="./img/mision-vision/vision.jpg" alt="Imagen Misión" class="img-fluid shadow">
+                <img src="../img/mision-vision/vision.jpg" alt="Imagen Visión" class="img-fluid shadow">
               </div>
             </div>
           </div>      
@@ -159,39 +159,10 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script>
-    // Cargar el contenido del Navbar con DOM
-    fetch('./componentes/Navbar/navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('Navbar').innerHTML = data;
-
-        //Enlace para el archivo CSS del Navbar
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './componentes/Navbar/navbar.css';
-        document.head.appendChild(link);
-      })
-      .catch(error => console.error('Error al cargar el Navbar:', error));
-  </script>
-  <script>
-    // Cargar el contenido del footer con DOM
-    fetch('./componentes/Footer/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-
-        // Enlace para el archivo CSS del footer
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './componentes/Footer/footer.css';
-        document.head.appendChild(link);
-      })
-      .catch(error => console.error('Error al cargar el footer:', error));
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="./../js/script.js"></script>
 </body>
 
 </html>

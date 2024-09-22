@@ -1,0 +1,16 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    padding-top: 44px;
+}
+
+.row h2 {
+    font-size: clamp(24.08px, 5vw, 32px);
+    color:#616F5D;
+}
+
+.row p {
+    font-size: clamp(16px, 5vw, 16px);
+}

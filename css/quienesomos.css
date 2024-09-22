@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url("./img/background/fondo_quienes_somos.png");
+  background-image: url("../img/background/fondo_quienes_somos.png");
   background-size: cover;
   background-position: center; 
   width: 100%;

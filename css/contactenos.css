@@ -10,6 +10,7 @@ body {
 .row h2 {
   font-size: clamp(24.08px, 5vw, 32px);
   color:#616F5D;
+  font-weight: bold;
 }
 
 .row p {

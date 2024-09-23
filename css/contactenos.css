@@ -1,16 +1,153 @@
 body {
     font-family: 'Poppins', sans-serif;
+
 }
 
 .content {
-    padding-top: 44px;
+  padding-top: 44px;
 }
 
 .row h2 {
-    font-size: clamp(24.08px, 5vw, 32px);
-    color:#616F5D;
+  font-size: clamp(24.08px, 5vw, 32px);
+  color:#616F5D;
+  font-weight: bold;
 }
 
-.row p {
-    font-size: clamp(16px, 5vw, 16px);
+.title-text {
+  font-size: 18px
 }
+
+  /* <!-- Contact Right-side form -->*/
+  .input-contact-form {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(97, 111, 93, 0.85);
+  }
+  
+  .btn-submit-contact {
+    background-color: #617842;
+    color: #ffffff;
+    border: 2px solid #617842;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit-contact:hover {
+    background-color: #616f5d;
+    border: 2px solid #617842;
+    color: #ffffff;
+  }
+  
+  .form-floating input:focus,
+  .form-floating textarea:focus {
+    border-color: #617842;
+    box-shadow: 0 0 5px rgba(97, 120, 66, 0.5);
+  }
+  
+  .form-floating input:not(:placeholder-shown) ~ label,
+  .form-floating textarea:not(:placeholder-shown) ~ label,
+  .form-floating input:focus ~ label,
+  .form-floating textarea:focus ~ label {
+    color: #617842;
+    font-weight: lighter;
+    font-size: small;
+    transform: translateY(-100%);
+  }
+  
+  .text-area-contact {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(97, 111, 93, 0.85);
+  }
+  
+  .text-area-contact:focus {
+    border-color: #617842;
+    box-shadow: 0 0 5px rgba(97, 120, 66, 0.5);
+  }
+  
+  .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #617842;
+    background-color: transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .form-check-input:focus {
+    box-shadow: 0 0 5px rgba(97, 120, 66, 0.95);
+    border-color: #617842;
+  }
+  
+  .form-check-input:checked {
+    background-color: rgba(97, 111, 93, 0.85);
+    border-color: #617842;
+  }
+  
+  .form-check-label {
+    color: #333;
+    font-weight: normal;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  .form-check-input:hover {
+    border-color: #9ba17b;
+  }
+  
+  .form-check-input:checked ~ .form-check-label {
+    color: #617842;
+  }
+  
+  /* <!-- Contact Left-side form -->*/
+  .image{
+      background-image: url('../img/background/sobrenosotros.jpg'); /* Ruta a la imagen de fondo */
+      background-position: center;
+      background-size: cover;
+      border-radius: 9px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      min-height: 600px;
+  }
+  .card-title {
+      margin-top: 20px;
+      height: 7%;
+      margin-left: 20px;
+      font-size: 25px;
+  }
+  
+  .card-text {
+      font-size: 1em;
+      margin-bottom: 50px;
+      padding: 15px;
+  }
+  
+  .contact-info p{
+      margin-bottom: 30px;
+      font-size: 16px;
+  }
+  
+  .contact-info i{
+      margin-left: 30px;
+      margin-right: 10px;
+  }
+  
+  .social-icons a {
+      display: inline-block;
+      min-height: 30px;
+      width: 30px;
+      background-color: rgb(255, 255, 255);
+      margin: 0 8px 15px 0;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      color: black;
+      margin-top: 40%;
+     
+  }
+  .social-icons {
+      margin-left: 30px;
+  }
+  
+  .social-icons a:hover {
+      background-color: #617842;
+  }

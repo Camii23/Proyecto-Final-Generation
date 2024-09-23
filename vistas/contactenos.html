@@ -23,20 +23,26 @@
   <div>
     <div id="Navbar"></div>
   </div>
-
+  <br><br>
+  <div class="ms-5">
+  <p class="home-view" style="font-size: 16px;"><span class="home-link" style="color: #00000060;">Inicio</span><span
+      style="color: #00000060;"> <i class="fa-solid fa-angle-right"> </i></span><span class="view-name">
+      Contáctenos</span></p>
+  </div>
   <div class="container text-center">
     <div class="row justify-content-center ">
-      <h2 class="mt-5">Contáctenos</h2>
+      <h2 class="mt-1">Contáctenos</h2>
       <div class="col-7 ">
         <br>
-        <p>Si tienes alguna duda, comentario o sugerencia, puedes contactarnos y nos comunicaremos contigo lo antes
+        <p class="title-text">Si tienes alguna duda, comentario o sugerencia, puedes contactarnos y nos comunicaremos
+          contigo lo antes
           posible. </p>
       </div>
     </div>
   </div>
 
   <div class="container mt-5 mb-5">
-    <div class="row  justify-content-center">
+    <div class="row  justify-content-around">
       <!-- Contact Left-side form -->
       <div class="card col-10 col-xl-4 col-lg-5 col-md-7 col-sm-9  image">
         <div class="card-img-overlay">
@@ -57,30 +63,54 @@
       </div>
 
       <!-- Contact Right-side form -->
-      <div id="form-container-contact" class="col-lg-7">
-        <form id="form-contact" action="" class="row mt-5">
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
+      <div id="form-container-contact" class="col-10 col-xl-7 col-lg-10 col-md-7 col-sm-7">
+        <form id="form-contact" action="" class="row mt-5 needs-validation" novalidate>
+          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
             <input id="fName" type="text" class="form-control input-contact-form" placeholder="Nombre"
               aria-label="Nombre" required />
             <label for="fName">Nombre</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Nombre
+            </div>
           </div>
 
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
+          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
             <input id="lName" type="text" class="form-control input-contact-form" placeholder="Apellido"
               aria-label="Apellido" required />
             <label for="lName">Apellido</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Apellido
+            </div>
           </div>
 
           <div class="form-floating col-sm-12 col-md-6 mt-4">
             <input id="email" type="email" class="form-control input-contact-form" placeholder="Correo"
               aria-label="Correo" required />
             <label for="email">Correo</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Correo
+            </div>
           </div>
 
           <div class="form-floating col-sm-12 col-md-6 mt-4">
             <input id="phone" type="text" class="form-control input-contact-form" placeholder="Teléfono"
               aria-label="Teléfono" required />
             <label for="phone">Teléfono</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Telefono
+            </div>
           </div>
 
           <div id="subject" class="row mt-5 mb-4">
@@ -115,14 +145,20 @@
             </div>
           </div>
 
-          <div class="form-floating mt-4">
+          <div class="form-floating mt-3">
             <textarea id="message" class="form-control text-area-contact" placeholder="Escribe tu mensaje..."
               aria-label="Escribe tu mensaje" style="height: 100px" required></textarea>
             <label for="message">Escribe tu mensaje...</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que: Escriba su mensaje.
+            </div>
           </div>
 
-          <div class="container d-flex justify-content-end mb-5">
-            <button type="submit" class="btn btn-primary btn-submit-contact mt-4">
+          <div class="container d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary btn-submit-contact mt-4 mx-3">
               Enviar Mensaje
             </button>
           </div>
@@ -142,6 +178,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="./../js/script.js"></script>
+  <script src="../js/contactenos.js"></script>
 </body>
 
 </html>

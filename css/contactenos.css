@@ -13,8 +13,8 @@ body {
   font-weight: bold;
 }
 
-.row p {
-  font-size: clamp(16px, 5vw, 16px);
+.title-text {
+  font-size: 18px
 }
 
   /* <!-- Contact Right-side form -->*/

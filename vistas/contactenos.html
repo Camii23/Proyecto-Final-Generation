@@ -58,29 +58,53 @@
 
       <!-- Contact Right-side form -->
       <div id="form-container-contact" class="col-10 col-xl-7 col-lg-10 col-md-7 col-sm-7">
-        <form id="form-contact" action="" class="row mt-5">
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
+        <form id="form-contact" action="" class="row mt-5 needs-validation" novalidate>
+          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
             <input id="fName" type="text" class="form-control input-contact-form" placeholder="Nombre"
-              aria-label="Nombre" required />
+              aria-label="Nombre" required/>
             <label for="fName">Nombre</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Nombre
+            </div>
           </div>
 
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
+          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
             <input id="lName" type="text" class="form-control input-contact-form" placeholder="Apellido"
               aria-label="Apellido" required />
             <label for="lName">Apellido</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Apellido
+            </div>
           </div>
 
           <div class="form-floating col-sm-12 col-md-6 mt-4">
             <input id="email" type="email" class="form-control input-contact-form" placeholder="Correo"
               aria-label="Correo" required />
             <label for="email">Correo</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Correo
+            </div>
           </div>
 
           <div class="form-floating col-sm-12 col-md-6 mt-4">
             <input id="phone" type="text" class="form-control input-contact-form" placeholder="Teléfono"
               aria-label="Teléfono" required />
             <label for="phone">Teléfono</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que ponga su: Telefono
+            </div>
           </div>
 
           <div id="subject" class="row mt-5 mb-4">
@@ -119,6 +143,12 @@
             <textarea id="message" class="form-control text-area-contact" placeholder="Escribe tu mensaje..."
               aria-label="Escribe tu mensaje" style="height: 100px" required></textarea>
             <label for="message">Escribe tu mensaje...</label>
+            <div class="valid-tooltip">
+              OK
+            </div>
+            <div class="invalid-tooltip">
+              Es necesario que: Escriba su mensaje.
+            </div>
           </div>
 
           <div class="container d-flex justify-content-end">
@@ -142,6 +172,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="./../js/script.js"></script>
+  <script src="../js/contactenos.js"></script>
 </body>
 
 </html>

@@ -33,7 +33,7 @@ header{font-family: 'Poppins', sans-serif !important;}
 .cart-icon-1{margin: 8px;}
 .acceso-icon-1{margin: 8px;}
 
-@media (min-width: 1102px) and (max-width: 1440px){
+@media (min-width: 1102px) and (max-width: 1522px){
     .box{margin-left: 30vw !important;}
     .container-search{width: 40vw;}
     .p-alert{margin-right: 400px;}

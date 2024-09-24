@@ -18,7 +18,7 @@ header{font-family: 'Poppins', sans-serif !important;}
 /*DESKTOP*/
 .navbar-brand{font-size: 1.7rem !important; padding-top: 2px !important; padding-bottom: 2px !important;}
 .alert-link{color: var(--letter-color); font-weight: 400 !important;}
-.p-alert{margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color); font-weight: 400;}
+.p-alert{ margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color); font-weight: 400;}
 .navbar{background-color: var(--nav-color-bg); }
 .box{margin-left: 8.5vw;}
 .nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 6px !important; padding-bottom: 4px !important;}
@@ -33,12 +33,12 @@ header{font-family: 'Poppins', sans-serif !important;}
 .cart-icon-1{margin: 8px;}
 .acceso-icon-1{margin: 8px;}
 
-@media (min-width: 1102px) and (max-width: 1522px){
+ @media (min-width: 1103px) and (max-width: 4000px){
     .box{margin-left: 30vw !important;}
     .container-search{width: 40vw;}
     .p-alert{margin-right: 400px;}
     
-}
+} 
 
 @media (max-width: 1101px){
     .container-search{
@@ -85,4 +85,3 @@ header{font-family: 'Poppins', sans-serif !important;}
 }
 
 /*============================================ End - Navbar =========================================================*/
-

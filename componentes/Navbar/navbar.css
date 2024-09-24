@@ -20,7 +20,7 @@ header{font-family: 'Poppins', sans-serif !important;}
 .navbar{background-color: var(--nav-color-bg); }
 .box{margin-left: 8.5vw;}
 .nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 2px !important; padding-bottom: 2px !important;}
-.container-search{width: 50vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 4px 6px; margin-right: 2.4rem;}
+.container-search{width: 30vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 4px 6px; margin-right: 2.4rem;}
 .search-icon{background-color: var(--search-bg-color);}
 .search{border: none; width: 100%; background-color: var(--search-bg-color);}
 .search:focus{ outline: none; background-color: var(--search-bg-color);}
@@ -43,14 +43,15 @@ header{font-family: 'Poppins', sans-serif !important;}
     .menu-link{flex-direction: column; align-items: center;}
     .box{margin-left: 0px;}
     .search-shopping{flex-direction:column-reverse;}
-    .shopping-acceso{flex-direction: column; align-items: center; font-size: 1.2rem;}
+    .shopping-acceso{flex-direction: column; align-items: center; font-size: 1.2rem;display: none;}
     .nav-link{font-size: 1.2rem !important; letter-spacing: 0.18rem;}
     .cart-icon{margin-bottom: 8px; text-decoration: none;}
     .acceso-icon{margin-bottom: 8px; text-decoration: none;}
-    .cart-icon::after{content: ""; text-decoration: none; color: black; margin-left: 8px;}
-    .acceso-icon::after{content: "Iniciar sesión"; text-decoration: none !; color: black; margin-left: 8px;}
+    .cart-icon::after{display: none; text-decoration: none; color: black; margin-left: 8px;}
+    .acceso-icon::after{display: none; content: "Iniciar sesión"; text-decoration: none !; color: black; margin-left: 8px;}
     .container-search{width: 100% !important;}
     .dropdown-menu{background-color: transparent !important;}
+    .shopping-acceso-menu{display: none;}
 }
 
 @media (min-width: 768px) and (max-width: 991px){

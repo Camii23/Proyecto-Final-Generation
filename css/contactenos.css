@@ -10,11 +10,10 @@ body {
 .row h2 {
   font-size: clamp(24.08px, 5vw, 32px);
   color:#616F5D;
-  font-weight: bold;
 }
 
-.title-text {
-  font-size: 18px
+.row p {
+  font-size: clamp(16px, 5vw, 16px);
 }
 
   /* <!-- Contact Right-side form -->*/

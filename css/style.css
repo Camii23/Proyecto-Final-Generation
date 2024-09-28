@@ -1,0 +1,53 @@
+/* Carousel - biobug */
+.carousel-inner {
+  height: 288px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 512px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  text-shadow: 2px 2px 5px black;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: 187px;
+  }
+  .carousel-image{
+    height: 320px;
+  }
+  .carousel-caption{
+    top: 24px;
+    height: 480px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .carousel-caption h5 {
+    font-size: 14px;
+  }
+  .btn-carousel {
+    font-size: 14px;
+  }
+}
+
+.btn-carousel {
+  background-color: #617842;
+  color: white;
+  border: 1px solid 617842;
+}
+
+.btn-carousel:hover {
+  background-color: #616f5d;
+  border: 1px solid white;
+}

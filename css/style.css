@@ -1,3 +1,7 @@
+body {
+  font-family: 'Poppins', sans-serif;
+
+}
 /* Carousel - biobug */
 .carousel-inner {
   height: 288px;
@@ -51,3 +55,33 @@
   background-color: #616f5d;
   border: 1px solid white;
 }
+
+
+/* Card - Products */
+#list-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; 
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  height: 24rem;
+  background-color: #FFFDF5;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px; 
+}
+
+/* NOTA para camila: si se puede hacer el botton mas peque estaia super */
+.card-body p{
+ font-size: 13px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+

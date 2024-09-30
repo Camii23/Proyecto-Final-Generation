@@ -5,13 +5,13 @@ itemsController.addItems();
 
 function addItemCard(item) {
     const itemHTML = `
-        <div class="card" style="width: 20rem;">
+        <div class="card h-100" style="width: 20rem;">
             <img src="${item.img}" class="card-img-top" alt="product image" style="height:250px;">
-            <div class="card-body">
+            <div class="card-body mb-1">
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.description}</p>
-                <p class="card-text">$ ${item.price}</p>
-                <button href="#" class="btn btn-primary" onclick="addCarrito('${item.name}')">Comprar</button>
+                <h5 class="card-text">$ ${item.price}</h5>
+                <button href="#" class="btn btn-buy" onclick="addCarrito('${item.name}')">Comprar</button>
             </div>
         </div>
         <br/>

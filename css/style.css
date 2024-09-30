@@ -72,10 +72,13 @@ body {
   height: 24rem;
   background-color: #FFFDF5;
   transition: transform 0.3s ease;
+  margin: auto;
   margin-bottom: 20px; 
 }
 
-/* NOTA para camila: si se puede hacer el botton mas peque estaia super */
+.card-title {
+  font-weight: bold;
+}
 .card-body p{
  font-size: 13px;
 }
@@ -84,4 +87,14 @@ body {
   transform: translateY(-10px);
 }
 
+.btn-buy {
+  background-color: #617842;
+  color: white;
+  align-items: center;
+}
 
+.btn-buy:hover {
+  background-color: #616f5d;
+  color: white;
+  border: 1px solid white;
+}

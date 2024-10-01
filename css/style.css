@@ -1,6 +1,10 @@
 body {
-  font-family: 'Poppins', sans-serif;
-
+  font-family: "Poppins", sans-serif;
+  background-image: url("../img/background/fondo-index-b.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 90%;
 }
 /* Carousel - biobug */
 .carousel-inner {
@@ -28,10 +32,10 @@ body {
   .carousel-inner {
     height: 187px;
   }
-  .carousel-image{
+  .carousel-image {
     height: 320px;
   }
-  .carousel-caption{
+  .carousel-caption {
     top: 24px;
     height: 480px;
     text-align: center;
@@ -56,32 +60,57 @@ body {
   border: 1px solid white;
 }
 
-
 /* Card - Products */
 #list-items {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px; 
+  gap: 20px;
 }
 
+.fondoo {
+  background-image: url("../img/background/fondo-index.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
 .card {
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: none;
   height: 24rem;
-  background-color: #FFFDF5;
+  background-color: #fffdf5;
   transition: transform 0.3s ease;
-  margin-bottom: 20px; 
+  margin: auto;
+  margin-bottom: 20px;
 }
 
-/* NOTA para camila: si se puede hacer el botton mas peque estaia super */
-.card-body p{
- font-size: 13px;
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+.card-body p {
+  font-size: 13px;
 }
 
 .card:hover {
   transform: translateY(-10px);
 }
 
+.btn-buy {
+  background-color: #617842;
+  color: white;
+  align-items: center;
+}
 
+.btn-buy:hover {
+  background-color: #616f5d;
+  color: white;
+  border: 1px solid white;
+}
+
+.card-img-top {
+  max-height: 200px;
+  border-radius: 10px;
+}

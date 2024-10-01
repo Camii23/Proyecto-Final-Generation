@@ -22,7 +22,7 @@ class productsController {
       scientificName: "Trichogramma spp.",
       description: "Parasitan los huevos de muchas plagas, incluyendo polillas y gusanos. Eficaces para prevenir infestaciones en cultivos.",
       quantityUnit: "100 Insectos",
-      price: "80,000",
+      price: "80.000",
       img: "../img/insects/avispas-parasitoides.jpg",
       createdAt: "2020-09-20"
     };
@@ -31,7 +31,7 @@ class productsController {
       id: this.currentId++,
       name: "Ácaro depredador",
       scientificName: "Phytoseiulus persimilis",
-      description: "Depredador natural de la araña roja, una plaga común en cultivos bajo invernadero.",
+      description: "Depredador natural de la araña roja, una plaga común en cultivos bajo invernadero. Controla infestaciones rápidamente.",
       quantityUnit: "80 Insectos",
       price: "160.000",
       img: "../img/insects/acaro-depredador.jpg",

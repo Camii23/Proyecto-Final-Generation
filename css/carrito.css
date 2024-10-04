@@ -1,0 +1,89 @@
+
+/* 
+Estilos Seccion Carrito de Compras  */
+
+.contenedor-carrito{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.items-carrito{
+    width: 65%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.precio {
+    font-weight: bold;
+}
+
+.boton-cantidad  {
+    display: flex;
+    align-items: center;
+}
+
+.boton-cantidad button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.carrito-resumen{
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: #444;
+}
+
+.tucarrito{
+    margin-left: 13%;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 2%;
+  }
+  
+.social-icon:hover {
+    transform: scale(1.1);
+  }

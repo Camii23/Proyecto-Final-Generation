@@ -87,18 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (emailLogin !== "" && passLogin !== "") {
       const user = users.find(u => u.email === emailLogin && u.password === passLogin);
       if (user) {
-        alert("Has iniciado sesión con éxito!");
+        const condition = true; 
+        if (condition) {
+          const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
+          loginModal.show();
+        }
         emailLogin = "";
         passLogin = "";
         setTimeout(() => {
           window.location.href = "../../html/index.html";
-        }, 1000);
-
-      } else {
-        alert("El correo electrónico o la contraseña son incorrectos.");
+        }, 2000);
       }
-    } else {
-      alert("Por favor, completa todos los campos.");
     }
   });
 });

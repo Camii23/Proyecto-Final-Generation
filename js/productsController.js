@@ -1,3 +1,5 @@
+// Entrega tarea 8
+
 export default class ProductsController {
   constructor() {
     this.items = JSON.parse(localStorage.getItem("products")) || [];

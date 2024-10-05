@@ -1,184 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactenos</title>
+    <!-- Bootstrap Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Iconos FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dUag0E0i07JQh0kps+RhyD73Bpt2vXrZ6HKAXjw/EK5vXgEN5e5X+dGA5NkloPZ2q98nMMPFsGMb4pG32jduAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS estilos -->
+    <!-- <link rel="stylesheet" href="../componentes/Navbar/navbar.css" /> -->
+    <link
+      rel="preload"
+      href="../componentes/Navbar/navbar.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link rel="stylesheet" href="../componentes/Footer/footer.css" />
+    <link
+      rel="preload"
+      href="../componentes/Footer/footer.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <link rel="stylesheet" href="../css/contactenos.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contactenos</title>
-  <!-- Bootstrap Link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- CSS estilos -->
-  <link rel="stylesheet" href="../css/contactenos.css">
-  <!-- Iconos FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-dUag0E0i07JQh0kps+RhyD73Bpt2vXrZ6HKAXjw/EK5vXgEN5e5X+dGA5NkloPZ2q98nMMPFsGMb4pG32jduAw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-  <!-- HEADER -->
-  <div>
-    <div id="Navbar"></div>
-  </div>
-  <br><br>
-  <div class="ms-5">
-    <p class="home-view" style="font-size: 16px;"><span class="home-link" style="color: #00000060;">Inicio</span><span
-        style="color: #00000060;"> <i class="fa-solid fa-angle-right"> </i></span><span class="view-name">
-        Contáctenos</span></p>
-  </div>
-  <div class="container text-center">
-    <div class="row justify-content-center ">
-      <h2 class="mt-1">Contáctenos</h2>
-      <div class="col-7 ">
-        <br>
-        <p class="title-text">Si tienes alguna duda, comentario o sugerencia, puedes contactarnos y nos comunicaremos
-          contigo lo antes
-          posible. </p>
-      </div>
+  <body>
+    <!-- HEADER -->
+    <div>
+      <div id="Navbar"></div>
     </div>
-  </div>
-
-  <div class="container mt-5 mb-5">
-    <div class="row  justify-content-around">
-      <!-- Contact Left-side form -->
-      <div class="card col-10 col-xl-4 col-lg-5 col-md-7 col-sm-9  image">
-        <div class="card-img-overlay">
-          <h3 class="card-title">Información de Contacto</h3>
-          <p class="card-text">¡Estamos aquí para ayudarte! Déjanos tu mensaje y te contactaremos pronto.</p>
-          <div class="contact-info">
-            <p><i class="fas fa-phone"></i> +123 456 789</p>
-            <p><i class="fas fa-envelope"></i> business@biobugsolutions.org</p>
-            <p><i class="fas fa-map-marker-alt"></i> Avenida #68-45 Bogotá, Colombia</p>
-          </div>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
+    <br /><br />
+    <div class="ms-5">
+      <p class="home-view" style="font-size: 16px">
+        <span class="home-link" style="color: #00000060">Inicio</span
+        ><span style="color: #00000060">
+          <i class="fa-solid fa-angle-right"> </i></span
+        ><span class="view-name"> Contáctenos</span>
+      </p>
+    </div>
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <h2 class="mt-1">Contáctenos</h2>
+        <div class="col-7">
+          <br />
+          <p class="title-text">
+            Si tienes alguna duda, comentario o sugerencia, puedes contactarnos
+            y nos comunicaremos contigo lo antes posible.
+          </p>
         </div>
       </div>
-
-      <!-- Contact Right-side form -->
-      <div id="form-container-contact" class="col-10 col-xl-7 col-lg-10 col-md-7 col-sm-7">
-        <form id="form-contact" action="" class="row mt-5 needs-validation" novalidate>
-          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
-            <input id="fName" type="text" class="form-control input-contact-form" placeholder="Nombre"
-              aria-label="Nombre" required/>
-            <label for="fName">Nombre</label>
-            <div class="valid-tooltip">
-              OK
-            </div>
-            <div class="invalid-tooltip">
-              Es necesario que ponga su: Nombre
-            </div>
-          </div>
-
-          <div class="form-floating col-sm-12 col-md-6 mt-4 needs-validation" novalidate>
-            <input id="lName" type="text" class="form-control input-contact-form" placeholder="Apellido"
-              aria-label="Apellido" required />
-            <label for="lName">Apellido</label>
-            <div class="valid-tooltip">
-              OK
-            </div>
-            <div class="invalid-tooltip">
-              Es necesario que ponga su: Apellido
-            </div>
-          </div>
-
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
-            <input id="email" type="email" class="form-control input-contact-form" placeholder="Correo"
-              aria-label="Correo" required />
-            <label for="email">Correo</label>
-            <div class="valid-tooltip">
-              OK
-            </div>
-            <div class="invalid-tooltip">
-              Es necesario que ponga su: Correo
-            </div>
-          </div>
-
-          <div class="form-floating col-sm-12 col-md-6 mt-4">
-            <input id="phone" type="text" class="form-control input-contact-form" placeholder="Teléfono"
-              aria-label="Teléfono" required />
-            <label for="phone">Teléfono</label>
-            <div class="valid-tooltip">
-              OK
-            </div>
-            <div class="invalid-tooltip">
-              Es necesario que ponga su: Telefono
-            </div>
-          </div>
-
-          <div id="subject" class="row mt-5 mb-4">
-            <h4>Selecciona el asunto</h4>
-
-            <div class="col-6 col-md-3 mt-3">
-              <div class="form-check">
-                <input id="support" name="options" type="radio" class="form-check-input" value="" required />
-                <label for="support" class="form-check-label">Soporte</label>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3 mt-3">
-              <div class="form-check">
-                <input id="deliveries" name="options" type="radio" class="form-check-input" value="" required />
-                <label for="deliveries" class="form-check-label"> Entregas</label>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3 mt-3">
-              <div class="form-check">
-                <input id="shopping" name="options" type="radio" class="form-check-input" value="" required />
-                <label for="shopping" class="form-check-label">Compras</label>
-              </div>
-            </div>
-
-            <div class="col-6 col-md-3 mt-3">
-              <div class="form-check">
-                <input id="orders" name="options" type="radio" class="form-check-input" value="" required />
-                <label for="orders" class="form-check-label">Ordenes</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-floating mt-3">
-            <textarea id="message" class="form-control text-area-contact" placeholder="Escribe tu mensaje..."
-              aria-label="Escribe tu mensaje" style="height: 100px" required></textarea>
-            <label for="message">Escribe tu mensaje...</label>
-            <div class="valid-tooltip">
-              OK
-            </div>
-            <div class="invalid-tooltip">
-              Es necesario que: Escriba su mensaje.
-            </div>
-          </div>
-
-          <div class="container d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary btn-submit-contact mt-4 mx-3">
-              Enviar Mensaje
-            </button>
-          </div>
-        </form>
-      </div>
     </div>
-    <!--Div Final-->
-  </div>
 
-  <!-- FOOTER -->
-  <div>
-    <div id="footer"></div>
-  </div>
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-around">
+        <!-- Contact Left-side form -->
+        <div class="card col-10 col-xl-4 col-lg-5 col-md-7 col-sm-9 image">
+          <div class="card-img-overlay">
+            <h3 class="card-title">Información de Contacto</h3>
+            <p class="card-text">
+              ¡Estamos aquí para ayudarte! Déjanos tu mensaje y te contactaremos
+              pronto.
+            </p>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +123 456 789</p>
+              <p>
+                <i class="fas fa-envelope"></i> business@biobugsolutions.org
+              </p>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Avenida #68-45 Bogotá,
+                Colombia
+              </p>
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="./../js/script.js"></script>
-  <script src="../js/contactenos.js"></script>
-</body>
+        <!-- Contact Right-side form -->
+        <div
+          id="form-container-contact"
+          class="col-10 col-xl-7 col-lg-10 col-md-7 col-sm-7"
+        >
+          <form
+            id="form-contact"
+            action=""
+            class="row mt-5 needs-validation"
+            novalidate
+          >
+            <div
+              class="form-floating col-sm-12 col-md-6 mt-4 needs-validation"
+              novalidate
+            >
+              <input
+                id="fName"
+                type="text"
+                class="form-control input-contact-form"
+                placeholder="Nombre"
+                aria-label="Nombre"
+                required
+              />
+              <label for="fName">Nombre</label>
+              <div class="valid-tooltip">OK</div>
+              <div class="invalid-tooltip">
+                Es necesario que ponga su: Nombre
+              </div>
+            </div>
 
+            <div
+              class="form-floating col-sm-12 col-md-6 mt-4 needs-validation"
+              novalidate
+            >
+              <input
+                id="lName"
+                type="text"
+                class="form-control input-contact-form"
+                placeholder="Apellido"
+                aria-label="Apellido"
+                required
+              />
+              <label for="lName">Apellido</label>
+              <div class="valid-tooltip">OK</div>
+              <div class="invalid-tooltip">
+                Es necesario que ponga su: Apellido
+              </div>
+            </div>
+
+            <div class="form-floating col-sm-12 col-md-6 mt-4">
+              <input
+                id="email"
+                type="email"
+                class="form-control input-contact-form"
+                placeholder="Correo"
+                aria-label="Correo"
+                required
+              />
+              <label for="email">Correo</label>
+              <div class="valid-tooltip">OK</div>
+              <div class="invalid-tooltip">
+                Es necesario que ponga su: Correo
+              </div>
+            </div>
+
+            <div class="form-floating col-sm-12 col-md-6 mt-4">
+              <input
+                id="phone"
+                type="text"
+                class="form-control input-contact-form"
+                placeholder="Teléfono"
+                aria-label="Teléfono"
+                required
+              />
+              <label for="phone">Teléfono</label>
+              <div class="valid-tooltip">OK</div>
+              <div class="invalid-tooltip">
+                Es necesario que ponga su: Telefono
+              </div>
+            </div>
+
+            <div id="subject" class="row mt-5 mb-4">
+              <h4>Selecciona el asunto</h4>
+
+              <div class="col-6 col-md-3 mt-3">
+                <div class="form-check">
+                  <input
+                    id="support"
+                    name="options"
+                    type="radio"
+                    class="form-check-input"
+                    value=""
+                    required
+                  />
+                  <label for="support" class="form-check-label">Soporte</label>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3 mt-3">
+                <div class="form-check">
+                  <input
+                    id="deliveries"
+                    name="options"
+                    type="radio"
+                    class="form-check-input"
+                    value=""
+                    required
+                  />
+                  <label for="deliveries" class="form-check-label">
+                    Entregas</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3 mt-3">
+                <div class="form-check">
+                  <input
+                    id="shopping"
+                    name="options"
+                    type="radio"
+                    class="form-check-input"
+                    value=""
+                    required
+                  />
+                  <label for="shopping" class="form-check-label">Compras</label>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3 mt-3">
+                <div class="form-check">
+                  <input
+                    id="orders"
+                    name="options"
+                    type="radio"
+                    class="form-check-input"
+                    value=""
+                    required
+                  />
+                  <label for="orders" class="form-check-label">Ordenes</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mt-3">
+              <textarea
+                id="message"
+                class="form-control text-area-contact"
+                placeholder="Escribe tu mensaje..."
+                aria-label="Escribe tu mensaje"
+                style="height: 100px"
+                required
+              ></textarea>
+              <label for="message">Escribe tu mensaje...</label>
+              <div class="valid-tooltip">OK</div>
+              <div class="invalid-tooltip">
+                Es necesario que: Escriba su mensaje.
+              </div>
+            </div>
+
+            <div class="container d-flex justify-content-end">
+              <button
+                type="submit"
+                class="btn btn-primary btn-submit-contact mt-4 mx-3"
+              >
+                Enviar Mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--Div Final-->
+    </div>
+
+    <!-- FOOTER -->
+    <div>
+      <div id="footer"></div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../js/script.js"></script>
+    <script src="../js/contactenos.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -41,7 +41,7 @@
           <a class="p-session" href="" style="color: black;">Inicia Sesión</a>
         </div>
         <div class="container-form">
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" name="form-register" id="form-register"  novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="name" required>
@@ -82,9 +82,10 @@
                 Tu contraseña está vacía
               </div>
             </div>
+            
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-              <label class="form-check-label" for="exampleCheck1">Acepto <a href="">Terminos de usos y Política de
+              <input type="checkbox" class="form-check-input" id="checkTerms" required>
+              <label class="form-check-label" for="checkTerms">Acepto <a href="">Terminos de usos y Política de
                     Privacidad</a></label>
                     <div class="valid-feedback">
                       Haz aceptado los terminos y condiciones
@@ -93,6 +94,7 @@
                       Debes aceptar los terminos y política de privacidad
                     </div>
             </div>
+            <input type="hidden" id="rol" value="cliente">
             <br>
             <button type="submit" class="btn btn-primary btn-register">Regístrate</button>
           </form>
@@ -111,7 +113,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
       <script src="./../js/script.js"></script>
-      <script src="../js/registro-session.js"></script>
+      <script type="module" src="../js/registro-session.js"></script>
 </body>
 
 </html>

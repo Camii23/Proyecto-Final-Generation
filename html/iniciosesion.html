@@ -42,10 +42,10 @@
             <h2 class="title-register mb-5">Inicia sesión</h2>
             <a class="p-session" href="" style="color: black;">Registrarse</a>
           </div>
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" name="login-form"  id="login-form" novalidate>
             <div class="mb-3">
-              <label for="email" class="form-label">Correo</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+              <label for="emailLogin" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" required>
               <div class="valid-feedback">
                 Correo eléctronico valido
               </div>
@@ -54,8 +54,8 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label d-flex justify-content-between">Contraseña <span class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span></label>
-              <input type="password" class="form-control" id="password" required>
+              <label for="passLogin" class="form-label d-flex justify-content-between">Contraseña <span class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span></label>
+              <input type="password" class="form-control" id="passLogin" required>
               <div class="valid-feedback">
                 Contraseña valida
               </div>
@@ -84,7 +84,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
       <script src="./../js/script.js"></script>
-      <script src="../js/registro-session.js"></script>
+      <script type="module" src="../js/registro-session.js"></script>
 </body>
 
 </html>

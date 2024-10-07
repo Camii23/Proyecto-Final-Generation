@@ -25,7 +25,7 @@
   </div>
   <br><br>
   <div class="ms-5">
-    <p class="home-view" style="font-size: 16px;"><span class="home-link" style="color: #00000060;">Inicio</span><span
+    <p class="home-view" style="font-size: 16px;"><span class="home-link" style="color: #00000060; cursor: pointer;">Inicio</span><span
         style="color: #00000060;"> <i class="fa-solid fa-angle-right"> </i></span><span class="view-name">
         Inicia sesión</span></p>
   </div>
@@ -40,7 +40,7 @@
         <div class="container-form">
           <div class="d-flex justify-content-between">
             <h2 class="title-register mb-5">Inicia sesión</h2>
-            <a class="p-session" href="" style="color: black;">Registrarse</a>
+            <a class="p-session" href="../html/registro.html" style="color: black;">Registrarse</a>
           </div>
           <form class="needs-validation" name="login-form" id="login-form" novalidate>
             <div class="mb-3">
@@ -64,7 +64,8 @@
                 Tu contraseña está vacía
               </div>
             </div>
-            <br>
+            <div id="loginError" class="text-danger mb-3" style="display: none;"> Usuario incorrecto. Vuelve ingresar los datos!</div>
+           <br>
             <button type="submit" class="btn btn-primary btn-register" >Inicia sesión</button>
             <div class="mt-3">
               <a class="p-session" href="" style="color: black;">Olvidé mi contraseña</a>

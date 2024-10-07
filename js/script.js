@@ -28,4 +28,7 @@ fetch('../componentes/Footer/footer.html')
     })
 .catch(error => console.error('Error al cargar el footer:', error));
 
-
+//redirecciona al la página de inicio
+document.querySelector(".home-link").addEventListener("click", () =>{
+    window.location.href= "../../html/index.html";
+})

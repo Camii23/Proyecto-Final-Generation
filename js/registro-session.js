@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = document.querySelector("#email");
     const pass = document.querySelector("#password");
     const checkTerms = document.querySelector("#checkTerms");
-    const rol = document.querySelector("#rol").value;
+    const rol = document.querySelector("#rol");
     let users = JSON.parse(localStorage.getItem("users") || "[]");
     const isExist = users.some(u => u.email === email);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
@@ -87,14 +87,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
       const user = users.find(u => u.email === emailLogin.value && u.password === passLogin.value);
+      console.log("users -->", users);
+      console.log("user->", user);
       if (user) {
         const condition = true;
         if (condition) {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();
         }
-
+        
+        localStorage.setItem('rol', user.rol);
+       alert(user.rol)
+  
         setTimeout(() => {
+         
           window.location.href = "../../html/index.html";
         }, 2000);
       }else {

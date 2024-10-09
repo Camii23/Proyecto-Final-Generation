@@ -1,4 +1,4 @@
-    
+
 // Cargar el contenido del Navbar con DOM
 fetch('../componentes/Navbar/navbar.html')
     .then(response => response.text())
@@ -10,6 +10,34 @@ fetch('../componentes/Navbar/navbar.html')
     link.rel = 'stylesheet';
     link.href = '../componentes/Navbar/navbar.css';
     document.head.appendChild(link);
+
+    const rol = localStorage.getItem('rol');
+    const btnStock = document.querySelector(".btn-stock");
+    const btnLink_sesion = document.querySelector(".link-sesion"); 
+    const btnIconSession = document.querySelector(".acceso-icon-1"); 
+    const loginOut = document.getElementById("login-out")
+    if (rol === 'admin') {
+        alert("Eres administrador"); 
+        btnStock.style.display = 'block';
+        btnLink_sesion.style.display = "none";
+        btnIconSession.style.display = "block";
+    } else if(rol === "cliente"){
+        btnStock.style.display = 'none'; 
+        btnLink_sesion.style.display = "none";
+        btnIconSession.style.display = "block";
+    }else{
+        btnStock.style.display = 'none'; 
+        btnLink_sesion.style.display = "block";
+        btnIconSession.style.display = "none";
+    }
+    loginOut.addEventListener("click", function(){
+        localStorage.setItem('rol', "user");
+        btnStock.style.display = "none";
+        btnIconSession.style.display = "none";
+        btnLink_sesion.style.display = "block";
+        
+    })
+
     })
 .catch(error => console.error('Error al cargar el Navbar:', error));
 

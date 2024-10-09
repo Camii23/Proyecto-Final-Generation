@@ -34,7 +34,7 @@ header{font-family: 'Poppins', sans-serif !important;}
 .btn-stock{display: none;}
 
  @media (min-width: 1200px) {
-    .box{margin-left: 20vw !important;}
+    .box{margin-left: 17vw !important;}
     .menu-link{min-width: 430px; text-align: center;} */
     .container-search{width: 40vw;}
     .p-alert{margin-right: 400px;}

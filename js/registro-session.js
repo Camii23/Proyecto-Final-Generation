@@ -37,6 +37,36 @@ togglePass.addEventListener("click", () => {
 })()
 
 
+//Password encoder
+function cifrar(texto, desplazamiento) {
+  let resultado = '';
+  for (let i = 0; i < texto.length; i++) {
+      let char = texto[i];
+      let code = char.charCodeAt(0);
+      // Ajustar el desplazamiento para incluir caracteres ASCII del 32 al 126
+    
+      if (code >= 32 && code <= 126) {
+          // Desplazamiento y ajuste con módulo
+          let nuevoCode = ((code - 32 + desplazamiento) % 95) + 32;
+          resultado += String.fromCharCode(nuevoCode);
+      } else {
+          resultado += char; // Mantener caracteres fuera del rango
+      }
+  }
+  
+  return resultado;
+}
+
+function descifrar(texto, desplazamiento) {
+  return cifrar(texto, -desplazamiento); // Desplazamiento negativo para descifrar
+}
+
+
+
+
+
+
+
 // -------------- Functiolality - Register -----------------
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,9 +79,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkTerms = document.querySelector("#checkTerms");
     const rol = document.querySelector("#rol");
     let users = JSON.parse(localStorage.getItem("users") || "[]");
-    const desplazamiento = 3;
+    const desplazamiento = 10;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
-    console.log(contrasenaCifrada);
+    alert("Contraseña cifrada:", contrasenaCifrada);
+
     const isExist = users.some(u => u.email === email);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
       && (contrasenaCifrada !== "") && checkTerms.checked) {
@@ -76,44 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-//
-
-
-
-function cifrar(texto, desplazamiento) {
-  let resultado = '';
-  
-  for (let i = 0; i < texto.length; i++) {
-      let char = texto[i];
-
-      // Cifrado de letras mayúsculas
-      if (char >= 'A' && char <= 'Z') {
-          resultado += String.fromCharCode(((char.charCodeAt(0) - 65 + desplazamiento) % 26) + 65);
-      }
-      // Cifrado de letras minúsculas
-      else if (char >= 'a' && char <= 'z') {
-          resultado += String.fromCharCode(((char.charCodeAt(0) - 97 + desplazamiento) % 26) + 97);
-      } else {
-          resultado += char; // No cifrar otros caracteres
-      }
-  }
-  
-  return resultado;
-}
-
-function descifrar(texto, desplazamiento) {
-  return cifrar(texto, -desplazamiento); // Desplazamiento negativo para descifrar
-}
-
-// Ejemplo de uso
-// const contrasena = "HolaMundo123";
-//const desplazamiento = 3;
-
-// const contrasenaCifrada = cifrar(contrasena, desplazamiento);
-// console.log("Contraseña cifrada:", contrasenaCifrada);
-
-// const contrasenaDescifrada = descifrar(contrasenaCifrada, desplazamiento);
-// console.log("Contraseña descifrada:", contrasenaDescifrada);
 
 
 // ---------- Functionality - Login ------------
@@ -128,8 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
-      const desplazamiento = 3;
-      // const contrasenaDescifrada = descifrar(contrasenaCifrada, desplazamiento);
+      const desplazamiento = 10;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
     
       console.log("users -->", users);

@@ -2,7 +2,7 @@ import Persona from "../js/models/persona.js";
 
 //======== Functionality - Hidden Password =========
 const togglePass = document.querySelector(".toggle-pass");
-const passInput = document.getElementById("passLogin")
+const passInput = document.getElementById("password")
 togglePass.addEventListener("click", () => {
   const valueType = passInput.getAttribute("type") === "password" ? "text" : "password";
   passInput.setAttribute("type", valueType);
@@ -37,6 +37,36 @@ togglePass.addEventListener("click", () => {
 })()
 
 
+//Password encoder
+function cifrar(texto, desplazamiento) {
+  let resultado = '';
+  for (let i = 0; i < texto.length; i++) {
+      let char = texto[i];
+      let code = char.charCodeAt(0);
+      // Ajustar el desplazamiento para incluir caracteres ASCII del 32 al 126
+    
+      if (code >= 32 && code <= 126) {
+          // Desplazamiento y ajuste con módulo
+          let nuevoCode = ((code - 32 + desplazamiento) % 95) + 32;
+          resultado += String.fromCharCode(nuevoCode);
+      } else {
+          resultado += char; // Mantener caracteres fuera del rango
+      }
+  }
+  
+  return resultado;
+}
+
+function descifrar(texto, desplazamiento) {
+  return cifrar(texto, -desplazamiento); // Desplazamiento negativo para descifrar
+}
+
+
+
+
+
+
+
 // -------------- Functiolality - Register -----------------
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,14 +79,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkTerms = document.querySelector("#checkTerms");
     const rol = document.querySelector("#rol");
     let users = JSON.parse(localStorage.getItem("users") || "[]");
+    const desplazamiento = 10;
+    const contrasenaCifrada = cifrar(pass.value, desplazamiento);
+    alert("Contraseña cifrada:", contrasenaCifrada);
+
     const isExist = users.some(u => u.email === email);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
-      && (pass.value !== "") && checkTerms.checked) {
+      && (contrasenaCifrada !== "") && checkTerms.checked) {
       if (isExist) {
         alert("El correo electrónico ya existe!");
         return;
       }
-      const person = new Persona(name.value, lastName.value, email.value, pass.value, rol.value);
+      const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
       alert("Registro existoso! Ya puedes iniciar sesion.");/*ALERTAAAAA*/
@@ -74,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 // ---------- Functionality - Login ------------
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -81,16 +116,17 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     let emailLogin = document.querySelector("#emailLogin");
-    let passLogin = document.querySelector("#passLogin");
+    let passLogin = document.querySelector("#password");
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
       const user = users.find(u => u.email === emailLogin.value && u.password === passLogin.value);
-      // console.log("users -->", users);
-      // console.log("user->", user);
+      console.log("users -->", users);
+      console.log("user->", user);
       if (user) {
         const condition = true;
+        console.log(user.pass);
         if (condition) {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();/*ALERTAAAAAAA*/
@@ -119,33 +155,6 @@ function alertUserInvalid(b, d, e) {
 
 
 
-
-//--prueba-copia--
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.querySelector("#login-form").addEventListener("submit", (e) => {
-//     e.preventDefault();
-
-//     let emailLogin = document.querySelector("#emailLogin").value;
-//     let passLogin = document.querySelector("#passLogin").value;
-//     const users = JSON.parse(localStorage.getItem("users")) || [];
-
-//     if (emailLogin !== "" && passLogin !== "") {
-//       const user = users.find(u => u.email === emailLogin && u.password === passLogin);
-//       if (user) {
-//         const condition = true;
-//         if (condition) {
-//           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
-//           loginModal.show();
-//         }
-//         emailLogin = "";
-//         passLogin = "";
-//         setTimeout(() => {
-//           window.location.href = "../../html/index.html";
-//         }, 2000);
-//       }
-//     }
-//   });
-// });
 
 
 

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const person = new Persona(name.value, lastName.value, email.value, pass.value, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
-      alert("Registro existoso! Ya puedes iniciar sesion.");
+      alert("Registro existoso! Ya puedes iniciar sesion.");/*ALERTAAAAA*/
       name.value = "";
       lastName.value = "";
       email.value = "";
@@ -87,17 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
       const user = users.find(u => u.email === emailLogin.value && u.password === passLogin.value);
-      console.log("users -->", users);
-      console.log("user->", user);
+      // console.log("users -->", users);
+      // console.log("user->", user);
       if (user) {
         const condition = true;
         if (condition) {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
-          loginModal.show();
+          loginModal.show();/*ALERTAAAAAAA*/
         }
         
         localStorage.setItem('rol', user.rol);
-       alert(user.rol)
+      //  alert(user.rol) A
   
         setTimeout(() => {
          

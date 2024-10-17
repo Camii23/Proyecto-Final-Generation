@@ -17,8 +17,8 @@ header{font-family: 'Poppins', sans-serif !important;}
 
 /*DESKTOP*/
 .navbar-brand{font-size: 1.7rem !important; padding-top: 2px !important; padding-bottom: 2px !important;}
-.alert-link{color: var(--letter-color); font-weight: 400 !important;}
 .p-alert{ margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color); font-weight: 400;}
+.alert-link{color: var(--letter-color); font-weight: 400 !important;}
 .navbar{background-color: var(--nav-color-bg); }
 .nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 6px !important; padding-bottom: 4px !important;}
 .container-search{width: 30vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 6px 6px; margin-right: 2.4rem; align-self: center;}

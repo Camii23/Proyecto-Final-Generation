@@ -17,7 +17,7 @@ fetch('../componentes/Navbar/navbar.html')
     const btnIconSession = document.querySelector(".acceso-icon-1"); 
     const loginOut = document.getElementById("login-out")
     if (rol === 'admin') {
-        alert("Eres administrador"); 
+        // alert("Eres administrador"); 
         btnStock.style.display = 'block';
         btnLink_sesion.style.display = "none";
         btnIconSession.style.display = "block";
@@ -31,10 +31,11 @@ fetch('../componentes/Navbar/navbar.html')
         btnIconSession.style.display = "none";
     }
     loginOut.addEventListener("click", function(){
-        localStorage.setItem('rol', "user");
+        localStorage.setItem('rol', "user"); 
         btnStock.style.display = "none";
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
+        /*ALERTAAAA --> 2000*/
         
     })
 

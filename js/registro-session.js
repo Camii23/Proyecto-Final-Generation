@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let users = JSON.parse(localStorage.getItem("users") || "[]");
     const desplazamiento = 10;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
-    alert("Contraseña cifrada:", contrasenaCifrada);
 
     const isExist = users.some(u => u.email === email);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
@@ -89,6 +88,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isExist) {
         alert("El correo electrónico ya existe!");
         return;
+      }
+      if(contrasenaCifrada.length < 8){
+        alert("Tu debe tener al menos 8 caracteres.");
+        pass.value = "";
+        return
       }
       const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
       users.push(person);
@@ -124,8 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const desplazamiento = 10;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
     
-      console.log("users -->", users);
-      console.log("user->", user);
+     
       if (user) {
         const condition = true;
         console.log(user.pass);
@@ -133,8 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();
         }
-        const emailObject = user.email;
-        localStorage.setItem("user", user;
+        
+        localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem('rol', user.rol);
        alert(user.rol)
   

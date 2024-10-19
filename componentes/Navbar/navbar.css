@@ -30,11 +30,14 @@ header{font-family: 'Poppins', sans-serif !important;}
 .navbar-toggler{ border-color: transparent !important;}
 .navbar-toggler:focus{box-shadow: none !important;}
 .cart-icon-1{margin: 8px;}
-.acceso-icon-1{margin: 8px; display: none;}
+.acceso-icon-1{margin: 8px; display: none; text-decoration: none; color: black; border: 1px solid transparent; padding: 6px; transition: .3s;
+    }
+.acceso-icon-1:hover{border-color: var(--alert-color);}
 .btn-stock{display: none;}
+.name-user{padding-right: 8px;}
 
  @media (min-width: 1200px) {
-    .box{margin-left: 17vw !important;}
+    .box{margin-left: 10vw !important;}
     .menu-link{min-width: 430px; text-align: center;} */
     .container-search{width: 40vw;}
     .p-alert{margin-right: 400px;}

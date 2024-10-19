@@ -29,7 +29,7 @@
         style="color: #00000060;"> <i class="fa-solid fa-angle-right"> </i></span><span class="view-name">
         Registro</span></p>
   </div>
-  <div class="container-fluid mt-5 mb-5 justify-content-center">
+  <div class="container-fluid mt-5 mb-5 justify-content-center px-5">
     
     <div class="row container-register justify-content-between mx-auto">
       <div class="col-md-6 col-sm-12 register-img pl-2">
@@ -73,25 +73,29 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label d-flex justify-content-between">Contraseña <span class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span></label>
+              <label for="password" class="form-label">Contraseña </label>
+             <div class="container-input-password">
               <input type="password" class="form-control" id="password" required>
+              <span class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span>
               <div class="valid-feedback">
                 Contraseña valida
               </div>
               <div class="invalid-feedback">
                 Tu contraseña está vacía
               </div>
+             </div>
+            
             </div>
             
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="checkTerms" required>
-              <label class="form-check-label" for="checkTerms">Acepto <a href="">Terminos de usos y Política de
-                    Privacidad</a></label>
+              <label class="form-check-label" for="checkTerms">Acepto terminos de usos y política de
+                    privacidad</label>
                     <div class="valid-feedback">
                       Haz aceptado los terminos y condiciones
                     </div>
                     <div class="invalid-feedback">
-                      Debes aceptar los terminos y política de privacidad
+                      Debes aceptar los terminos y política de privacidad.
                     </div>
             </div>
             <input type="hidden" id="rol" value="cliente">

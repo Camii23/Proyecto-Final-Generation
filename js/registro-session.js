@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();
         }
-        
+        const emailObject = user.email;
+        localStorage.setItem("user", user;
         localStorage.setItem('rol', user.rol);
        alert(user.rol)
   

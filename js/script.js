@@ -58,6 +58,17 @@ fetch('../componentes/Navbar/navbar.html')
         btnStock.style.display = "none";
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
+
+        Swal.fire({
+            icon: 'info',
+            title: 'Cerrando sesión',
+            text: 'Has cerrado sesión exitosamente.',
+            confirmButtonColor: '#617842'
+        }).then(() => {
+            setTimeout(() => {
+                window.location.href = "../../html/index.html";
+            }, 3000);
+        });
     }
     })
 

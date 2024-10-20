@@ -109,11 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
         
       }
       if(!validatePassword(pass.value)){
-        alert(`Tu contraseña debe tener: 
-          -Al menos una mayúscula.
-          -Al menos una minúscula.
-          -Al menos un número.
-          -Al menos un carácter especial.`);
+        Swal.fire({
+          icon: 'error',
+          title: 'Contraseña inválida',
+          html: `Tu contraseña debe tener:
+          <ul style="text-align: left;">
+            <li>Al menos una mayúscula.</li>
+            <li>Al menos una minúscula.</li>
+            <li>Al menos un número.</li>
+            <li>Al menos un carácter especial.</li>
+          </ul>`,
+          confirmButtonColor: '#617842'
+
+        });
+          
+          
         pass.value = "";
         return
       }

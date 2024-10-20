@@ -16,8 +16,7 @@ fetch('../componentes/Navbar/navbar.html')
     const btnLink_sesion = document.querySelector(".link-sesion"); 
     const btnIconSession = document.querySelector(".acceso-icon-1"); 
     const loginOut = document.getElementById("login-out")
-    if (rol === 'admin') {
-        // alert("Eres administrador"); 
+    if (rol === 'admin') { 
         btnStock.style.display = 'block';
         btnLink_sesion.style.display = "none";
         btnIconSession.style.display = "block";
@@ -35,9 +34,17 @@ fetch('../componentes/Navbar/navbar.html')
         btnStock.style.display = "none";
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
-        /*ALERTAAAA --> 2000*/
         
-    })
+        Swal.fire({
+            icon: 'info',
+            title: 'cerrando sesion',
+            text: 'Has cerrado sesión exitosamente.'
+        }).then(() => {
+            setTimeout(() => {
+                window.location.href = "../../html/index.html";
+                }, 2000);
+            });
+        });
 
     })
 .catch(error => console.error('Error al cargar el Navbar:', error));

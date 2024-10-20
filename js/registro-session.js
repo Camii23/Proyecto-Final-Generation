@@ -63,10 +63,6 @@ function descifrar(texto, desplazamiento) {
 
 
 
-
-
-
-
 // -------------- Functiolality - Register -----------------
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -81,19 +77,28 @@ document.addEventListener('DOMContentLoaded', function () {
     let users = JSON.parse(localStorage.getItem("users") || "[]");
     const desplazamiento = 10;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
-    alert("Contraseña cifrada:", contrasenaCifrada);
+    
 
     const isExist = users.some(u => u.email === email);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
       && (contrasenaCifrada !== "") && checkTerms.checked) {
       if (isExist) {
-        alert("El correo electrónico ya existe!");
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'El correo electronico ya existe!'
+        });
         return;
       }
       const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
-      alert("Registro existoso! Ya puedes iniciar sesion.");
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro exitoso',
+        text: 'Registro existoso! Ya puedes iniciar sesion.'
+      });
+
       name.value = "";
       lastName.value = "";
       email.value = "";
@@ -106,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
 
 
 // ---------- Functionality - Login ------------
@@ -124,18 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const desplazamiento = 10;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
     
-      console.log("users -->", users);
-      console.log("user->", user);
       if (user) {
         const condition = true;
-        console.log(user.pass);
         if (condition) {
-          const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
+          const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));/*CAMILA VUELVE A MODIFICAR ACÁ*/
           loginModal.show();
         }
         
         localStorage.setItem('rol', user.rol);
-       alert(user.rol)
   
         setTimeout(() => {
          

@@ -39,7 +39,8 @@ fetch('../componentes/Navbar/navbar.html')
         Swal.fire({
             icon: 'info',
             title: 'cerrando sesion',
-            text: 'Has cerrado sesión exitosamente.'
+            text: 'Has cerrado sesión exitosamente.',
+            confirmButtonColor: '#617842'
         }).then(() => {
             setTimeout(() => {
                 window.location.href = "../../html/index.html";

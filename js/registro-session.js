@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'El correo electronico ya existe!'
+          text: 'El correo electronico ya existe!',
+          confirmButtonColor: '#617842'
         });
         return;
         
@@ -97,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
       Swal.fire({
         icon: 'success',
         title: 'Registro exitoso',
-        text: 'Registro existoso! Ya puedes iniciar sesion.'
+        text: 'Registro existoso! Ya puedes iniciar sesion.',
+        confirmButtonColor: '#617842'
       });
 
       name.value = "";
@@ -157,8 +159,12 @@ function alertUserInvalid(b, d, e) {
 }
 
 
-
-
-
+/* alerta de contraseña incorrecto
+Swal.fire({
+        title: "Contraseña incorrecta",
+        icon: "warning",
+        confirmButtonColor: '#617842'
+      
+*/
 
 

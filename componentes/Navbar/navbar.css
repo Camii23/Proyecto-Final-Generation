@@ -11,14 +11,13 @@
     --search-bg-color:#F0F0F0;
 }
 header{font-family: 'Poppins', sans-serif !important;}
-.header-alert{display: flex; background-color: var(--alert-color); color: var(--letter-color) !important;
-            justify-content: end;  padding-right: 7.3vw !important; align-items: center;
-}
-
+.header-alert{display: flex; background-color: var(--alert-color); color: var(--letter-color) !important; justify-content: center;}
+.fa-sign-out{margin-right: 6px;}
 /*DESKTOP*/
+
 .navbar-brand{font-size: 1.7rem !important; padding-top: 2px !important; padding-bottom: 2px !important;}
 .alert-link{color: var(--letter-color); font-weight: 400 !important;}
-.p-alert{ margin-right: 24.5vw; padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color); font-weight: 400;}
+.p-alert{  padding-top: 9px; padding-bottom: 8px; font-size: .8rem !important; color: var(--letter-color); font-weight: 400;}
 .navbar{background-color: var(--nav-color-bg); }
 .nav-link{font-size: 0.96rem !important; color: black !important; padding-top: 6px !important; padding-bottom: 4px !important;}
 .container-search{width: 30vw !important;background-color: var(--search-bg-color); border-radius: 20px; padding: 6px 6px; margin-right: 2.4rem; align-self: center;}
@@ -29,65 +28,79 @@ header{font-family: 'Poppins', sans-serif !important;}
 .dropdown-menu{background-color: var(--nav-color-bg) !important; border-color: transparent !important;}
 .navbar-toggler{ border-color: transparent !important;}
 .navbar-toggler:focus{box-shadow: none !important;}
-.cart-icon-1{margin: 8px;}
+.cart-icon-1{font-size: 1.4rem; margin-left: 4px;}
 .acceso-icon-1{margin: 8px; display: none; text-decoration: none; color: black; border: 1px solid transparent; padding: 6px; transition: .3s;
     }
 .acceso-icon-1:hover{border-color: var(--alert-color);}
 .btn-stock{display: none;}
 .name-user{padding-right: 8px;}
+.menu-link{display: flex; justify-content: center; align-items: center;}
 
- @media (min-width: 1200px) {
-    .box{margin-left: 10vw !important;}
-    .menu-link{min-width: 430px; text-align: center;} */
+@media only screen and (max-width: 1140px) and (min-width: 1023px) {
+    .box{margin-left: 7vw !important; text-align: center;}
     .container-search{width: 40vw;}
-    .p-alert{margin-right: 400px;}
+   
     
 } 
 
-@media (max-width: 1299px){
-    .box{margin-left: 10vw !important;}
-    .container-search{
-        width: 34vw !important;
-        margin-right: 1rem;
-    }
-}
-@media (min-width: 1400px){
-    .box{margin-left: 17.5vw !important;}
-    .container-search{
-        width: 35vw !important;
-        margin-right: 1rem;
-    }
-}
+@media only screen and (max-width: 1199px) and (min-width: 1141px) {
+    .box{margin-left: 10vw !important; text-align: center;}
+    .container-search{width: 40vw;}
+  
+    
+} 
+@media only screen and (max-width: 1300px) and (min-width: 1200px) {
+    .box{margin-left: 14vw !important;text-align: center;}
+    .container-search{width: 40vw;}
+    
+    
+} 
+ @media only screen and (max-width: 1400px) and (min-width: 1301px) {
+    .box{margin-left: 22vw !important; text-align: center;}
+   
+    
+}  
+@media only screen and (min-width: 1401px) {
+    .box{margin-left: 22vw !important; text-align: center;}
+    
+}  
+
+
 /*MOBILE*/
-@media (max-width: 765px){
+@media screen and (max-width: 765px){
     .navbar{background-color: #C4C8B5; }
     .bag-icon{display: flex !important;margin-bottom: 8px; margin-top: 8px;}
     .container-menu{display: flex !important; flex-direction: row-reverse !important; width: 100%; justify-content: space-between; }
     .menu-link{flex-direction: column; align-items: center;}
-    .box{margin-left: 0px;}
+    .box{margin-left: 0px !important;}
     .search-shopping{flex-direction:column-reverse;}
     .shopping-acceso-1{flex-direction: column; align-items: center; font-size: 1.2rem;display: none;}
     .nav-link{font-size: 1.2rem !important; letter-spacing: 0.08rem;}
     .cart-icon-1{display: none; margin-bottom: 8px; text-decoration: none;margin-top: 8px;}
     .acceso-icon-1{margin-bottom: 8px; text-decoration: none;}
-    .cart-icon::after{display: flex; text-decoration: none; color: black; margin-right: 10px;margin-top: 8px;}
-    .acceso-icon-1::after{margin-left: 10px; content: "Iniciar sesión"; text-decoration: none; color: black;letter-spacing: 0.10rem;}
-    .container-search{width: 100% !important;}
+    .cart-icon{font-size: 1.4rem;}
+    /* .cart-icon::after{display: flex; text-decoration: none; color: black; margin-right: 10px;margin-top: 8px;}
+    .acceso-icon-1::after{margin-left: 10px; content: ""; text-decoration: none; color: black;letter-spacing: 0.10rem;} */
+    .container-search{width: 100% !important; margin-top: 4px; margin-right: 0px;}
     .dropdown-menu{background-color: transparent !important;}
-    .p-alert{margin-right: 15px;}
+    
     
 }
 /*TABLET*/
-@media (min-width: 768px) and (max-width: 991px){
+@media screen and (min-width: 768px) and (max-width: 991px){
     .search-menu{display: inline !important; margin-right: 0.6rem;}
-    /*.search-menu .fa-solid{color: black; align-items: center;}*/
-    /* .search-menu a{font-size: 18px; color: black; position: absolute; top: 12px; right: 150.5px;} */
-    .shopping-acceso-menu{display: flex !important;}
+    
+    .shopping-acceso-menu{display: flex !important; align-items: center;}
+    .acceso-icon{font-size: 1.2rem;   text-decoration: none; background-color: #616F5D; padding: 2px 10px 2px 10px;
+         border-radius: 50%; color: whitesmoke;}
+    .acceso-sesion-tablet{text-decoration: none;  color: black; border: 1px solid var(--alert-color); padding: 2px 6px 2px 6px;}
+    .cart-icon{margin-right: 2px; margin-left: 10px; font-size: 1.3rem;}
     .container-menu{width: 100%; display: flex; justify-content: space-between;}
     .container-shopping-acceso-menu{display: flex; align-items: center;}
     .navbar-toggler{margin-left: .8rem;}
     
     .nav-container{flex-direction: column-reverse !important;}
+    .navbar-toggler{padding: 0px 0px 0px 6px;}
     .box{ display: none; margin-top: 8px;margin-bottom: 4px; margin-left: 0px;}
     .search-shopping{justify-content: space-between;}
     .container-search{width: 60vw !important; margin-right: 6px;}

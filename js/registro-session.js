@@ -63,9 +63,21 @@ function descifrar(texto, desplazamiento) {
 
 
 
+//Capitaliza un texto
+function capitalizeFirstLetter(text) {
+  if (!text) return text; 
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+//HarddPassword
+function validatePassword(password) {
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
-
-
+  return password.length >= minLength && hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
+}
 
 // -------------- Functiolality - Register -----------------
 
@@ -78,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const pass = document.querySelector("#password");
     const checkTerms = document.querySelector("#checkTerms");
     const rol = document.querySelector("#rol");
-    let users = JSON.parse(localStorage.getItem("users") || "[]");
-    const desplazamiento = 10;
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    const desplazamiento = 6;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
 
     const isExist = users.some(u => u.email === email);
@@ -89,12 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
         alert("El correo electrónico ya existe!");
         return;
       }
-      if(contrasenaCifrada.length < 8){
-        alert("Tu debe tener al menos 8 caracteres.");
+      if(!validatePassword(pass.value)){
+        alert(`Tu contraseña debe tener: 
+          -Al menos una mayúscula.
+          -Al menos una minúscula.
+          -Al menos un número.
+          -Al menos un carácter especial.`);
         pass.value = "";
         return
       }
-      const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
+      const person = new Persona(capitalizeFirstLetter(name.value), capitalizeFirstLetter(lastName.value), email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
       alert("Registro existoso! Ya puedes iniciar sesion.");
@@ -125,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
-      const desplazamiento = 10;
+      const desplazamiento = 6;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
-    
+   
      
       if (user) {
         const condition = true;
-        console.log(user.pass);
+        
         if (condition) {
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();

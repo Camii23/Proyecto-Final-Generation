@@ -5,23 +5,27 @@
     margin: 0px;
     box-sizing: border-box;
 }
-:root{--color-primary: #616F5D; --btn-bg-color: #617842;}
+:root{--color-primary: ; --btn-bg-color: #617842;}
 .container-register{font-family: 'Poppins', sans-serif !important; width: 100%;}
 .title-register{font-weight: bold;color: var(--color-primary)}
-.register-img{height: 55vw; padding: 0px; background-image: url("../img/register-session/Gardening-pana-1.svg");
+.register-img{height: 52vw; padding: 0px; background-image: url("../img/register-session/Gardening-pana-1.svg");
     background-size: cover; background-position: center; background-repeat: no-repeat;}  
 .register{border-radius: 24px;  padding: 48px; /*border: 1px solid #66666650;*/
      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);  max-width: 630px; max-height: 562px;}
-.toggle-pass{margin-right: 50px; cursor: pointer;}
+.container-input-password{position: relative;}
+#password{padding-right: 80px;}
+.toggle-pass{margin-right: 50px; cursor: pointer; position: absolute; right: .1px; top: 12.5%;}
 .eye-icon{color: #666666e8;}
 .form-check-input:checked[type="checkbox"]{background-color: black; }
-.btn-register{width: 100%; font-size: medium; height: 64px; background-color: var(--btn-bg-color); border-color: transparent;}
+.btn-register{width: 100%; font-size: medium; height: 64px; background-color: var(--btn-bg-color) !important; border-color: transparent;}
 .btn-register:hover{background-color: var(--btn-bg-color);border-color: transparent;}
 
 @media only screen and (max-width: 768px) {
     .title-register{font-size: 1.3rem;}
     .p-session{font-size: .9rem;}
     .container-form{width: 100%;}
+    #password{padding-right: 34px;}
+    .toggle-pass{ margin-left: 6px; margin-right: 8px;}
 }
 
 

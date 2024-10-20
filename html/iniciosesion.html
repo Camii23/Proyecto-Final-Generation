@@ -29,7 +29,7 @@
         style="color: #00000060;"> <i class="fa-solid fa-angle-right"> </i></span><span class="view-name">
         Inicia sesión</span></p>
   </div>
-  <div class="container-fluid mt-5 mb-5 justify-content-center">
+  <div class="container-fluid mt-5 mb-5 justify-content-center px-5">
 
     <div class="row container-register justify-content-between mx-auto align-items-center">
       <div class="col-md-6 col-sm-12 register-img pl-2">
@@ -54,15 +54,18 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="passLogin" class="form-label d-flex justify-content-between">Contraseña <span
-                  class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span></label>
-              <input type="password" class="form-control" id="password" required>
-              <div class="valid-feedback">
-                Contraseña valida
-              </div>
-              <div class="invalid-feedback">
-                Tu contraseña está vacía
-              </div>
+              <label for="passLogin" class="form-label d-flex justify-content-between">Contraseña</label>
+              <div class="container-input-password">
+                <input type="password" class="form-control" id="password" required>
+                <span class="toggle-pass"><i class="fa-solid fa-eye-slash eye-icon"></i></span>
+                <div class="valid-feedback">
+                  Contraseña valida
+                </div>
+                <div class="invalid-feedback">
+                  Tu contraseña está vacía
+                </div>
+               </div>
+             
             </div>
             <div id="loginError" class="text-danger mb-3" style="display: none;"> Usuario incorrecto. Vuelve ingresar los datos!</div>
            <br>

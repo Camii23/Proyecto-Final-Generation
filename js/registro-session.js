@@ -63,6 +63,22 @@ function descifrar(texto, desplazamiento) {
 
 
 
+//Capitaliza un texto
+function capitalizeFirstLetter(text) {
+  if (!text) return text; 
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+//HarddPassword
+function validatePassword(password) {
+  const minLength = 8;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumber = /\d/.test(password);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+  return password.length >= minLength && hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
+}
+
 // -------------- Functiolality - Register -----------------
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -74,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const pass = document.querySelector("#password");
     const checkTerms = document.querySelector("#checkTerms");
     const rol = document.querySelector("#rol");
-    let users = JSON.parse(localStorage.getItem("users") || "[]");
-    const desplazamiento = 10;
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    const desplazamiento = 6;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
     
     // validacion si el usuario existe
@@ -92,7 +108,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
         
       }
-      const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
+      if(!validatePassword(pass.value)){
+        alert(`Tu contraseña debe tener: 
+          -Al menos una mayúscula.
+          -Al menos una minúscula.
+          -Al menos un número.
+          -Al menos un carácter especial.`);
+        pass.value = "";
+        return
+      }
+      const person = new Persona(capitalizeFirstLetter(name.value), capitalizeFirstLetter(lastName.value), email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
       Swal.fire({
@@ -128,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
-      const desplazamiento = 10;
+      const desplazamiento = 6;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
     
       if (user) {
@@ -138,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
           loginModal.show();
         }
         
+        localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem('rol', user.rol);
   
         setTimeout(() => {

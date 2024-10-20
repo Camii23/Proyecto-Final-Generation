@@ -35,6 +35,7 @@ fetch('../componentes/Navbar/navbar.html')
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
         
+        // Alerta cuando se cierra sesion
         Swal.fire({
             icon: 'info',
             title: 'cerrando sesion',

@@ -37,7 +37,7 @@ togglePass.addEventListener("click", () => {
 })()
 
 
-//Password encoder
+//contraseña cifrada
 function cifrar(texto, desplazamiento) {
   let resultado = '';
   for (let i = 0; i < texto.length; i++) {
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const desplazamiento = 10;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
     
-
-    const isExist = users.some(u => u.email === email);
+    // validacion si el usuario existe
+    const isExist = users.some(u => u.email === email.value);
     if ((name.value !== "") && (lastName.value !== "") && (email.value !== "")
       && (contrasenaCifrada !== "") && checkTerms.checked) {
       if (isExist) {
@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
           text: 'El correo electronico ya existe!'
         });
         return;
+        
       }
       const person = new Persona(name.value, lastName.value, email.value, contrasenaCifrada, rol.value);
       users.push(person);
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
 
         window.location.href = "../../html/iniciosesion.html";
-      }, 2000);
+      }, 3000);
 
     }
   });

@@ -155,6 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const textDanger = document.querySelector("#loginError");
       const desplazamiento = 6;
       const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
+      Swal.fire({
+        title: "Usuario incorrecto. Vuelve ingresar los datos!",
+        icon: "warning",
+        confirmButtonColor: '#617842'
+      });
     
       if (user) {
         const condition = true;
@@ -184,13 +189,5 @@ function alertUserInvalid(b, d, e) {
 
 }
 
-
-/* alerta de contraseña incorrecto
-Swal.fire({
-        title: "Contraseña incorrecta",
-        icon: "warning",
-        confirmButtonColor: '#617842'
-      
-*/
 
 

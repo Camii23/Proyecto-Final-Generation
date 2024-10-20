@@ -58,21 +58,9 @@ fetch('../componentes/Navbar/navbar.html')
         btnStock.style.display = "none";
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
-        
-        // Alerta cuando se cierra sesion
-        Swal.fire({
-            icon: 'info',
-            title: 'cerrando sesion',
-            text: 'Has cerrado sesión exitosamente.',
-            confirmButtonColor: '#617842'
-        }).then(() => {
-            setTimeout(() => {
-                window.location.href = "../../html/index.html";
-                }, 2000);
-            });
-        });
-
+    }
     })
+
 .catch(error => console.error('Error al cargar el Navbar:', error));
 
 
@@ -94,3 +82,4 @@ fetch('../componentes/Footer/footer.html')
 document.querySelector(".home-link").addEventListener("click", () =>{
     window.location.href= "../../html/index.html";
 })
+

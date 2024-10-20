@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (user) {
         const condition = true;
         if (condition) {
-          const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));/*CAMILA VUELVE A MODIFICAR ACÁ*/
+          const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();
         }
         

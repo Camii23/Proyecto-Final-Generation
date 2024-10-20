@@ -82,4 +82,3 @@ fetch('../componentes/Footer/footer.html')
 document.querySelector(".home-link").addEventListener("click", () =>{
     window.location.href= "../../html/index.html";
 })
-

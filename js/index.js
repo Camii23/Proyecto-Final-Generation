@@ -12,7 +12,7 @@ function addItemCard(item) {
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.description}</p>
                 <h5 class="card-text">$ ${item.price}</h5>
-                <button href="#" class="btn btn-buy" onclick="addCarrito('${item.name}')">Comprar</button>
+                <button href="#" class="btn btn-buy" onclick="addCarrito('${item.id}')">Comprar</button>
             </div>
         </div>
         <br/>

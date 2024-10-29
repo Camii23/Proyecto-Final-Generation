@@ -3,19 +3,19 @@
 
     <div>
         <div class="container-fluid header-alert">
-            <span class="p-alert text-center"><a class="alert-link" href="">Registrate</a> y <a class="alert-link"
-                    href="">obtén</a> 20% off en tu primer orden. <a class="alert-link" href="">Registrate
+            <span class="p-alert text-center"><a class="alert-link" href="../../html/registro.html">Registrate</a> y <a
+                    class="alert-link" href="">obtén</a> 20% off en tu primer orden. <a class="alert-link"
+                    href="../../html/registro.html">Registrate
                     ahora</a></span>
-            <span><i class="bi bi-x-lg"></i></span>
+            <!-- <span><i class="bi bi-x-lg"></i></span> -->
         </div>
     </div>
     <nav class="navbar py-0 navbar-expand-lg ">
 
         <div class="container-fluid">
             <div class="container-menu">
-
                 <span class="bag-icon" style="display: none;">
-                    <a href="" style="font-size: 1.8rem;"></a>
+                    <!-- <a href="" style="font-size: 1.8rem;"></a> -->
                     <a class="cart-icon" href=""><i class="fa-solid fa-cart-shopping" style="color: #000000;"></i></a>
 
                 </span>
@@ -29,14 +29,26 @@
                             <input class="search" type="search" placeholder="Buscar productos..." aria-label="Search">
 
                         </form>
-                        <!-- <a href=""><i class="bi bi-search"></i></a> -->
+
                     </div>
+                    <!--Menu versión tablet-->
                     <div class="shopping-acceso-menu " style="display: none;">
+                        <a class="acceso-sesion-tablet" href="../../html/iniciosesion.html">Ingresar</a>
+                        <div class="dropdown">
+                            <a href="../../html/iniciosesion.html" class="acceso-icon" id="sesion"
+                                data-bs-toggle="dropdown"><span class="name-user-tablet">E</span></a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" id="login-out-tablet" href="#" ><i class="fa fa-sign-out" aria-hidden="true"></i>Cerrar sesión</a></li>
+
+                            </ul>
+                        </div>
                         <a class="cart-icon" href=""><i class="fa-solid fa-cart-shopping"
-                                style="color: #000000;"></i></a>
-                        <a class="acceso-icon" href=""><i class="fa-regular fa-user" style="color: #000000;"></i></a>
+                            style="color: #000000;"></i></a>
+
+
+                    
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler m-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -45,7 +57,7 @@
             </div>
             <div class="collapse navbar-collapse w-lg-100" id="navbarSupportedContent">
                 <ul class="nav-container navbar-nav  mb-2 mb-lg-0">
-                    <div class="menu-link d-flex">
+                    <div class="menu-link">
 
 
                         <li class="nav-item">
@@ -53,6 +65,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../html/contactenos.html">Contactenos</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-stock" href="../../html/contactenos.html">Stock de Productos</a>
                         </li>
 
                     </div>
@@ -69,17 +85,29 @@
 
                             </form>
 
-                            <div class="shopping-acceso-1 d-flex">
+                            <div class="shopping-acceso-1 d-flex align-items-center">
+
+                                <a href="../../html/iniciosesion.html" class="nav-link link-sesion">Ingresar</a>
+                                <div class="dropdown">
+                                    <a href="../../html/iniciosesion.html" class="acceso-icon-1 " id="sesion"
+                                        data-bs-toggle="dropdown"><span class="name-user"></span><i
+                                            class="fa-regular fa-user" style="color: #000000;"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item login-out" href="#" ><i class="fa fa-sign-out" aria-hidden="true"></i>Cerrar sesión</a></li>
+
+
+                                    </ul>
+                                </div>
                                 <a class="cart-icon-1" href=""><i class="fa-solid fa-cart-shopping"
                                         style="color: #000000;"></i></a>
-                                <a class="acceso-icon-1" href=""><i class="fa-regular fa-user"
-                                        style="color: #000000;"></i></a>
+
                             </div>
-                        </div>
                     </li>
                 </ul>
 
             </div>
         </div>
     </nav>
+
+
 </header>

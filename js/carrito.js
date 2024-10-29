@@ -1,39 +1,32 @@
-import itemsController from './productsControllerInstance.js';
+import productsController from "./productsController.js";
+
+const itemsController = new productsController();
 
 const STORAGE_KEY = "carroItems";
 
 // Inicializar carrito desde el localStorage
 let carroItems = cargarCarroDesdeLocalStorage() || {};
 
-// Ahora, itemsController ya tiene los productos cargados.
+// cargamos los productos para ver que todo ok
 console.log(itemsController.items);
 
 function addCarrito(idItem) {
-    // Guarda el id en el localStorage para usarlo en carrito.html
-    let carroItems = JSON.parse(localStorage.getItem('carroItems')) || [];
-
-    // Si el producto ya está en el carrito, incrementa la cantidad
-    const existingItem = carroItems.find(item => item.id === idItem);
-    if (existingItem) {
-        existingItem.cantidad += 1;
+    if (!carroItems[idItem]) {
+        carroItems[idItem] = { cantidad: 1 };
     } else {
-        carroItems.push({ id: idItem, cantidad: 1 });
+        // incrementa cantidad si producto esta en carrito
+        carroItems[idItem].cantidad += 1;
     }
-
-    // Guarda el carrito actualizado en el localStorage
-    localStorage.setItem('carroItems', JSON.stringify(carroItems));
-
-    // Redirigir a la página del carrito
+    guardarCarroEnLocalStorage();
     window.location.href = 'carrito.html';
 }
-
 
 function removerCarrito(idItem) {
     if (carroItems[idItem]) {
         if (carroItems[idItem].cantidad > 1) {
             carroItems[idItem].cantidad -= 1;
         } else {
-            delete carroItems[idItem]; // Eliminar producto del carrito
+            delete carroItems[idItem];
         }
         guardarCarroEnLocalStorage();
     }
@@ -42,18 +35,21 @@ function removerCarrito(idItem) {
 
 function actualizarCarro() {
     const contenedorCarrito = document.querySelector('.items-carrito');
-    contenedorCarrito.innerHTML = ''; // Limpia el carrito antes de actualizar
+    contenedorCarrito.innerHTML = '';
     let total = 0;
 
     Object.keys(carroItems).forEach(id => {
-        const { nombre, precio, cantidad } = carroItems[id];
-        const totalItem = precio * cantidad;
+        //buscamos: si en itemsController hay forEach(id y parseamos pq no podemos comparar int de itemsController con String de carroItems
+        const product = itemsController.items.find(item => String(item.id) === id);
+        const { name, price } = product;
+        const cantidad = carroItems[id].cantidad;
+        const totalItem = price * cantidad;
         total += totalItem;
 
         const itemHTML = `
             <div class="item">
                 <div class="info-producto">
-                    <p>${nombre}</p>
+                    <p>${name}</p>
                     <span class="precio">$${totalItem.toFixed(2)}</span>
                 </div>
                 <div class="boton-cantidad">
@@ -66,7 +62,6 @@ function actualizarCarro() {
         contenedorCarrito.innerHTML += itemHTML;
     });
 
-    // Actualizar resumen de la orden
     document.querySelector('.carrito-resumen .carrito-detalles').innerHTML = `
         <p>Subtotal: <span>$${total.toFixed(2)}</span></p>
         <p>Descuento (-20%): <span>$${(total * 0.2).toFixed(2)}</span></p>
@@ -75,7 +70,6 @@ function actualizarCarro() {
     `;
 }
 
-// Funciones para trabajar con el localStorage
 function guardarCarroEnLocalStorage() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(carroItems));
 }
@@ -85,11 +79,10 @@ function cargarCarroDesdeLocalStorage() {
     return carroGuardado ? JSON.parse(carroGuardado) : null;
 }
 
-// Exponer funciones globalmente
+// exponer funciones globalmente
 window.addCarrito = addCarrito;
 window.removerCarrito = removerCarrito;
 
-// Cargar carrito en la interfaz al iniciar la página
-actualizarCarro();
-
- 
+document.addEventListener("DOMContentLoaded", () => {
+    actualizarCarro();
+});

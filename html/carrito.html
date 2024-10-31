@@ -20,30 +20,35 @@
         <div id="Navbar"></div>
     </header>
 
-     <!-- Seccion Tu carrito -->
-     <h1 class="tucarrito" id="carrito">Tu carrito</h1><hr>
-     <div class="contenedor-carrito">
- 
-         
-         <div class="items-carrito">
-             
-         </div>
-         <div class="carrito-resumen">
-             <h3>Resumen de Orden</h3>
-             <div class="carrito-detalles">
-                 <p>Subtotal: <span>$0</span></p>
-                 <p>Descuento (-20%): <span>$0</span></p>
-                 <p>Envío: <span>$0</span></p><hr>
-                 <h4>Total: <span>$0</span></h4><br>
-             </div>
-             <button class="checkout-btn">Comprar →</button>
-         </div>
- 
-     </div>
-
+    <!-- Seccion Tu carrito -->
+    <h1 class="tucarrito mt-5" id="carrito">Tu carrito</h1>
+    <hr>
+    <div class="container">
+        <div class="row mt-5">
+            <!-- Carrito de items -->
+            <div class="col-12 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-12 me-3 items-carrito">
+                <!-- Los productos del carrito se agregarán aquí con JavaScript -->
+            </div>
+    
+            <!-- Resumen de la orden -->
+            <div class="col-10 col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 mx-auto mt-3 carrito-resumen">
+                <h3>Resumen de Orden</h3>
+                <hr>
+                <div class="carrito-detalles">
+                    <p>Subtotal: <span>$0</span></p>
+                    <p>Descuento (-20%): <span>$0</span></p>
+                    <p>Envío: <span>$0</span></p>
+                    
+                    <h4 class="mb-3">Total: <span>$0</span></h4><br>
+                </div>
+                <button class="checkout-btn">Comprar →</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- FOOTER -->
     <footer>
-        <div id="footer" class="foooter"></div>
+        <div id="footer" class="foooter mt-5"></div>
     </footer>
 
     <!-- SCRIPTS -->

@@ -41,16 +41,17 @@ function actualizarCarro() {
     Object.keys(carroItems).forEach(id => {
         //buscamos: si en itemsController hay forEach(id y parseamos pq no podemos comparar int de itemsController con String de carroItems
         const product = itemsController.items.find(item => String(item.id) === id);
-        const { name, price } = product;
+        const { name, price, img } = product;
         const cantidad = carroItems[id].cantidad;
         const totalItem = price * cantidad;
         total += totalItem;
 
         const itemHTML = `
-            <div class="item">
+            <div class="item col-12">
+                <img src="${img}" alt="${name}" class="producto-imagen shadow">
                 <div class="info-producto">
                     <p>${name}</p>
-                    <span class="precio">$${totalItem.toFixed(2)}</span>
+                    <span class="precio">$${totalItem.toLocaleString('es-CO')}</span>
                 </div>
                 <div class="boton-cantidad">
                     <button onclick="removerCarrito('${id}')">-</button>
@@ -62,12 +63,23 @@ function actualizarCarro() {
         contenedorCarrito.innerHTML += itemHTML;
     });
 
-    document.querySelector('.carrito-resumen .carrito-detalles').innerHTML = `
-        <p>Subtotal: <span>$${total.toFixed(2)}</span></p>
-        <p>Descuento (-20%): <span>$${(total * 0.2).toFixed(2)}</span></p>
-        <p>Envío: <span>$0.00</span></p>
-        <h4>Total: <span>$${(total * 0.8).toFixed(2)}</span></h4>
-    `;
+ // Calcular el subtotal
+let subtotal = total;
+
+// Calcular el descuento (20%)
+let descuento = subtotal * 0.2;
+
+// Calcular el total después de aplicar el descuento
+let totalConDescuento = subtotal - descuento;
+
+// Actualizar el resumen del carrito
+document.querySelector('.carrito-resumen .carrito-detalles').innerHTML = `
+    <p>Subtotal: <span>$${subtotal.toLocaleString('es-CO')}</span></p>
+    <p>Descuento (-20%): <span>$${descuento.toLocaleString('es-CO')}</span></p>
+    <p>Envío: <span>$0.00</span></p>
+    <h4>Total: <span>$${totalConDescuento.toLocaleString('es-CO')}</span></h4>
+`;
+
 }
 
 function guardarCarroEnLocalStorage() {

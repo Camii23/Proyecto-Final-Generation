@@ -90,3 +90,10 @@ Estilos Seccion Carrito de Compras  */
     margin-left: 13%;
 }
  
+.mensaje-vacio {
+    text-align: center;
+    color: #888;
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-top: 15%;
+}

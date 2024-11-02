@@ -15,6 +15,8 @@ fetch('../componentes/Navbar/navbar.html')
     const rol = localStorage.getItem('rol');
     const user = JSON.parse(localStorage.getItem("user"));
     const btnStock = document.querySelector(".btn-stock");
+    const btnContact = document.querySelector(".btn-contac");
+    const btnAboutUs = document.querySelector(".btn-aboutus");
     const btnLink_sesion = document.querySelector(".link-sesion"); 
     const btnIconSession = document.querySelector(".acceso-icon-1"); 
     const btnLoginOut = document.querySelector(".login-out")
@@ -23,8 +25,9 @@ fetch('../componentes/Navbar/navbar.html')
     const acceso_sesion_tablet = document.querySelector(".acceso-sesion-tablet");
     
     if (rol === 'admin') {
-        alert("Eres administrador"); 
         btnStock.style.display = 'block';
+        btnContact.style.display = 'none';
+        btnAboutUs.style.display = 'block';
         acceso_sesion_tablet.style.display = "none";
         btnLink_sesion.style.display = "none";
         nameUser.innerHTML= `${user.name} ${user.lastName.charAt(0)}.`;

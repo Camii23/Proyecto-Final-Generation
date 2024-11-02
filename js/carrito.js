@@ -38,10 +38,22 @@ function actualizarCarro() {
     contenedorCarrito.innerHTML = '';
     let total = 0;
 
+        if (Object.keys(carroItems).length === 0) {
+            contenedorCarrito.innerHTML = `<p class="mensaje-vacio">¡No tienes nada aquí todavia!  <i class="fas fa-shopping-cart"></i></p>`;
+            document.querySelector('.carrito-resumen .carrito-detalles').innerHTML = `
+                <p>Subtotal: <span>$0</span></p>
+                <p>Descuento (-20%): <span>$0</span></p>
+                <p>Envío: <span>$0.00</span></p>
+                <h4>Total: <span>$0</span></h4>
+            `;
+            return; 
+        }
+    
+
     Object.keys(carroItems).forEach(id => {
         //buscamos: si en itemsController hay forEach(id y parseamos pq no podemos comparar int de itemsController con String de carroItems
         const product = itemsController.items.find(item => String(item.id) === id);
-        const { name, price, img } = product;
+        const { name, price, quantityUnit, img } = product;
         const cantidad = carroItems[id].cantidad;
         const totalItem = price * cantidad;
         total += totalItem;
@@ -50,7 +62,7 @@ function actualizarCarro() {
             <div class="item col-12">
                 <img src="${img}" alt="${name}" class="producto-imagen shadow">
                 <div class="info-producto">
-                    <p>${name}</p>
+                    <p>${name}  (Pack: ${quantityUnit})</p>
                     <span class="precio">$${totalItem.toLocaleString('es-CO')}</span>
                 </div>
                 <div class="boton-cantidad">

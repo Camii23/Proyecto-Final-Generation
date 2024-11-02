@@ -91,15 +91,19 @@
             
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="checkTerms" required>
-              <label class="form-check-label" for="checkTerms">Acepto terminos de usos y política de
-                    privacidad</label>
-                    <div class="valid-feedback">
-                      Haz aceptado los terminos y condiciones
-                    </div>
-                    <div class="invalid-feedback">
-                      Debes aceptar los terminos y política de privacidad.
-                    </div>
-            </div>
+              <label class="form-check-label" for="checkTerms">
+                  Acepto 
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalTerms">términos de uso</a> y 
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalTerms">política de privacidad</a>
+              </label>
+              <div class="valid-feedback">
+                  Has aceptado los términos y condiciones.
+              </div>
+              <div class="invalid-feedback">
+                  Debes aceptar los términos y política de privacidad.
+              </div>
+          </div>
+          
             <input type="hidden" id="rol" value="cliente">
             <br>
             <button type="submit" class="btn btn-primary btn-register">Regístrate</button>
@@ -122,6 +126,36 @@
 
       <script src="./../js/script.js"></script>
       <script type="module" src="../js/registro-session.js"></script>
-</body>
+
+<!-- Modal Politicas y Terminos de Uso -->
+<div class="modal fade" id="modalTerms" tabindex="-1" aria-labelledby="modalTermsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalTermsLabel">Términos de Uso y Política de Privacidad</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p><p>Bienvenido al sitio web de BioBug Solutions. Al acceder y utilizar nuestros servicios, aceptas cumplir con estos Términos de Uso y nuestra Política de Privacidad. Si no estás de acuerdo con estos términos, te recomendamos que no utilices nuestro sitio.</p>
+
+              <p>La información y los materiales en este sitio son proporcionados con fines informativos y educativos. No puedes reproducir, distribuir, modificar o usar el contenido sin nuestro consentimiento previo por escrito. Nos reservamos el derecho a realizar cambios en los precios, productos y servicios ofrecidos en nuestro sitio sin previo aviso. Además, no seremos responsables por cualquier daño, pérdida o perjuicio que pueda surgir del uso de nuestro sitio o de los productos adquiridos.</p>
+              Al registrarte o realizar un pedido en BioBug Solutions, recopilamos información personal que incluye tu nombre, dirección de correo electrónico, dirección de envío y detalles de pago. Esta información es necesaria para procesar tus pedidos y mejorar nuestra oferta de servicios.
+              La información que recopilamos se utiliza para los siguientes propósitos: procesar tus pedidos, enviarte confirmaciones y actualizaciones, ofrecerte un servicio al cliente efectivo, y proporcionarte información sobre nuestros productos y servicios. También podemos usar tu información para enviarte comunicaciones promocionales, pero solo si has dado tu consentimiento.
+              Implementamos medidas de seguridad adecuadas para proteger tus datos personales contra el acceso no autorizado, la divulgación, la alteración o la destrucción. Sin embargo, ten en cuenta que ninguna transmisión de datos a través de internet puede garantizarse como completamente segura. Aunque tomamos precauciones, no podemos garantizar la seguridad absoluta de tu información.</p>
+              No compartimos tu información personal con terceros sin tu consentimiento explícito, salvo en situaciones necesarias para procesar tu pedido, como proveedores de servicios de pago o transporte. Estos terceros están obligados a proteger tus datos y solo pueden usarlos para los fines específicos para los cuales se los proporcionamos.
+              Tienes derecho a acceder, corregir o eliminar tu información personal que tengamos. Para hacerlo, contáctanos a través de los medios proporcionados en nuestro sitio. Nos esforzaremos por responder a tu solicitud en un plazo razonable.
+              Nos reservamos el derecho a modificar estos Términos de Uso y nuestra Política de Privacidad en cualquier momento. Te notificaremos sobre los cambios significativos en esta política mediante un aviso en nuestro sitio. Te recomendamos revisar periódicamente esta página para estar informado sobre cómo protegemos tu información. Al utilizar nuestros servicios, confirmas que has leído y comprendido estos Términos de Uso y la Política de Privacidad de BioBug Solutions. Si tienes alguna pregunta o inquietud, no dudes en ponerte en contacto con nosotros.</p>
+              </p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" style="background-color: #616F5D;" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+    </body>
 
 </html>

@@ -81,8 +81,10 @@ function validatePassword(password) {
 
 // -------------- Functiolality - Register -----------------
 
+const baseURL = "http://localhost:8080/user";
+
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById("form-register").addEventListener("submit", function (e) {
+  document.getElementById("form-register").addEventListener("submit", async function (e) {
     e.preventDefault();
     const name = document.querySelector("#name");
     const lastName = document.querySelector("#lastName");
@@ -93,6 +95,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const desplazamiento = 6;
     const contrasenaCifrada = cifrar(pass.value, desplazamiento);
+
+    const cliente = {
+      rolUser: rol.value,
+      nameUser: capitalizeFirstLetter(name.value),
+      lastNameUser: capitalizeFirstLetter(lastName.value),
+      emailUser: email.value,
+      passwordUser: contrasenaCifrada
+    };
+    
     
     // validacion si el usuario existe
     const isExist = users.some(u => u.email === email.value);
@@ -130,6 +141,29 @@ document.addEventListener('DOMContentLoaded', function () {
       const person = new Persona(capitalizeFirstLetter(name.value), capitalizeFirstLetter(lastName.value), email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
+
+      try {
+        const response = await fetch(`${baseURL}/create`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cliente)
+        });
+  
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Detalles del error:", errorData);
+            return;
+        }
+  
+        const data = await response.json();
+        console.log("Respuesta del servidor:", data);
+  
+    } catch (error) {
+        console.error("Error al realizar la operación:", error);
+    }
+
       Swal.fire({
         icon: 'success',
         title: 'Registro exitoso',
@@ -194,7 +228,5 @@ function alertUserInvalid(b, d, e) {
   e.value = "";
 
 }
-
-
 
 

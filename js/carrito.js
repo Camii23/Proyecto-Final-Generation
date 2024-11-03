@@ -9,6 +9,7 @@ let carroItems = cargarCarroDesdeLocalStorage() || {};
 
 // cargamos los productos para ver que todo ok
 console.log(itemsController.items);
+ 
 
 function addCarrito(idItem) {
   if (!carroItems[idItem]) {
@@ -18,20 +19,25 @@ function addCarrito(idItem) {
     carroItems[idItem].cantidad += 1;
   }
   guardarCarroEnLocalStorage();
+
+  if (window.location.pathname.includes("productoSimple.html")) {
+    window.location.href = "carrito.html";
+  } else {
     Swal.fire({
-        icon: 'success',
-        title: 'Producto añadido al carrito!',
-        text: '¿Qué quieres hacer a continuación?',
-        showCancelButton: true,
-        confirmButtonText: 'Ir al carrito',
-        cancelButtonText: 'Explorar más',
-        confirmButtonColor: '#617842',
-        cancelButtonColor: '#B84450'
-      }).then((result) => {
-        if (result.isConfirmed) {
+      icon: 'success',
+      title: 'Producto añadido al carrito!',
+      text: '¿Qué quieres hacer a continuación?',
+      showCancelButton: true,
+      confirmButtonText: 'Ir al carrito',
+      cancelButtonText: 'Explorar más',
+      confirmButtonColor: '#617842',
+      cancelButtonColor: '#B84450'
+    }).then((result) => {
+      if (result.isConfirmed) {
           window.location.href = "carrito.html";
-        }
-      });
+      }
+    });
+  }
 }
 
 function removerCarrito(idItem) {

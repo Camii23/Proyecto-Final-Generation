@@ -43,7 +43,7 @@
           <a class="p-session" href="../html/iniciosesion.html" style="color: black;">Inicia Sesión</a>
         </div>
         <div class="container-form">
-          <form class="needs-validation" name="form-register" id="form-register"  novalidate>
+          <form class="needs-validation" name="form-register" id="form-register" method="POST" action="#" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="name" required>
@@ -104,9 +104,9 @@
               </div>
           </div>
           
-            <input type="hidden" id="rol" value="cliente">
+            <input type="hidden" id="rol" value="admin">
             <br>
-            <button type="submit" class="btn btn-primary btn-register">Regístrate</button>
+            <button type="submit" id="btnCrear" class="btn btn-primary btn-register ">Regístrate</button>
           </form>
         </div>
 

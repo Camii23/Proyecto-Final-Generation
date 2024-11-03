@@ -82,7 +82,10 @@
     color: black;
     display: block;
     margin-bottom: 13px;
-    transition: all .3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #617842;
 }
 
 

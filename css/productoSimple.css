@@ -1,8 +1,63 @@
-
-
 body {
     background-image: url("../img/background/producto.png");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.card {
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fffdf5;
+    min-height: 400px;
+}
+
+.card img {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.card-body {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.5em;
+}
+
+.card-text em {
+    font-style: italic;
+    color: #888;
+}
+
+.card-price {
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    background-color: #617842;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 216px;
+    padding: 5px 10px;
+}
+
+.btn-primary:hover {
+    background-color: #616f5d;
 }

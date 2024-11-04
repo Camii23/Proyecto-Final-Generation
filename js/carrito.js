@@ -20,7 +20,7 @@ function addCarrito(idItem) {
   }
   guardarCarroEnLocalStorage();
 
-  if (window.location.pathname.includes("productoSimple.html")) {
+  if (window.location.pathname.includes("productoSimple.html") || window.location.pathname.includes("carrito.html")) {
     window.location.href = "carrito.html";
   } else {
     Swal.fire({

@@ -1,0 +1,58 @@
+/* Estilos Seccion Carrito de Compras  */
+
+body {
+  background-image: url("../img/background/factura.png");
+  background-size: cover; /* Cambiado a cover */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: left;
+  max-height: 700px;
+  background-attachment: fixed;
+}
+
+.producto-imagen {
+  width: 130px;
+  border-radius: 10px;
+  box-shadow: #000000c4;
+  margin-right: 25px;
+}
+
+.items-factura {
+  background-color: #FFFEF9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.factura-resumen {
+  background-color: #FFFEF9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 460px;
+  overflow-y: auto;
+}
+
+.checkout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px; /* Ajustado para un padding más uniforme */
+  background-color: #d9ddc7;
+  color: #000000;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.icono-envio {
+  width: 92px; /* Ajusta el tamaño de la imagen */
+  height: 90px;
+}
+
+.tufactura {
+  margin-left: 13%;
+  font-size: 32px;
+}

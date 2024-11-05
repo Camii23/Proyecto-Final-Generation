@@ -10,6 +10,17 @@ let carroItems = cargarCarroDesdeLocalStorage() || {};
 // cargamos los productos para ver que todo ok
 console.log(itemsController.items);
  
+const user = JSON.parse(localStorage.getItem('user'));
+if (user) {
+    document.getElementById('factura').textContent = `Factura de ${user.name} ${user.lastName} `;
+    document.querySelector('.checkout-btn').innerHTML = `
+        <img src="../img/background/delivery.png" alt="Delivery Icon" class="icono-envio">
+        ¡Gracias por tu compra! Tu factura será enviada a ${user.email}
+    `;
+} else {
+    console.error("No se encontró el usuario en localStorage.");
+}
+
 listarCarro();
 
 function listarCarro() {
@@ -40,8 +51,17 @@ function listarCarro() {
   let subtotal = total;
   let descuento = subtotal * 0.2;
   let totalConDescuento = subtotal - descuento;
+
+  //Funcion fecha:
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString("es-CO", {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+  });
+
   document.querySelector(".factura-resumen .factura-detalles").innerHTML = `
-    <p>Fecha: <span>20/09/2024</span></p>
+    <p>Fecha: <span>${formattedDate}</span></p>
     <p>Subtotal: <span>$${subtotal.toLocaleString("es-CO")}</span></p>
     <p>Descuento (-20%): <span>$${descuento.toLocaleString("es-CO")}</span></p>
     <p>Envío: <span>$0.00</span></p>
@@ -55,10 +75,10 @@ function cargarCarroDesdeLocalStorage() {
   return carroGuardado ? JSON.parse(carroGuardado) : null;
 }
 
-// exponer funciones globalmente
-window.addCarrito = addCarrito;
-window.removerCarrito = removerCarrito;
-
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarCarro();
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+      // Vaciar el carrito cuando la página pasa a un estado oculto (al cambiar de vista)
+      localStorage.removeItem(STORAGE_KEY);
+      carroItems = {};
+  }
 });

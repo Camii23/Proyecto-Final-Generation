@@ -20,7 +20,7 @@ function addCarrito(idItem) {
   }
   guardarCarroEnLocalStorage();
 
-  if (window.location.pathname.includes("productoSimple.html")) {
+  if (window.location.pathname.includes("productoSimple.html") || window.location.pathname.includes("carrito.html")) {
     window.location.href = "carrito.html";
   } else {
     Swal.fire({
@@ -123,3 +123,75 @@ window.removerCarrito = removerCarrito;
 document.addEventListener("DOMContentLoaded", () => {
   actualizarCarro();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const checkoutButton = document.querySelector('.checkout-btn');
+
+  checkoutButton.addEventListener('click', async () => {
+
+    if (Object.keys(carroItems).length === 0) {
+      await Swal.fire({
+          icon: 'info',
+          title: 'Carrito vacío',
+          text: 'No ha agregado productos al carrito.',
+          confirmButtonColor: '#617842',
+          showConfirmButton: false,
+          timer: 2000
+      });
+      return; // Evita continuar si el carrito está vacío
+  }
+  
+      await Swal.fire({
+          title: 'Comprobando datos',
+          html: '<div class="spinner"></div>',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          timer: 1500
+      });
+
+      const user = JSON.parse(localStorage.getItem("user"));
+      
+      if (user) {
+          if (user.rol === 'admin') {
+              await Swal.fire({
+                  icon: 'error',
+                  title: 'Acceso Restringido',
+                  text: 'Acción no permitida para administradores.',
+                  confirmButtonColor: '#617842',
+                  showConfirmButton: false,
+                  timer: 2000
+              });
+          } else if (user.rol === 'cliente') {
+              await Swal.fire({
+                  icon: 'success',
+                  title: 'Generando factura',
+                  text: 'Redirigiendo a la página de facturación...',
+                  confirmButtonColor: '#617842',
+                  showConfirmButton: false,
+                  timer: 2000
+              });
+              await registrarDatosCarrito();
+              setTimeout(() => {
+                  window.location.href = "../../html/factura.html";
+              }, 1);
+          }
+      } else {
+          console.log("Usuario no encontrado en el localStorage.");
+          await Swal.fire({
+              icon: 'warning',
+              title: 'Por favor inicie sesión',
+              text: 'Debe iniciar sesión para completar la compra.',
+              confirmButtonColor: '#617842',
+              showConfirmButton: false,
+              timer: 2000
+          });
+          setTimeout(() => {
+              window.location.href = "../../html/iniciosesion.html";
+          }, 1);
+      }
+  });
+});
+
+async function registrarDatosCarrito() {
+
+}

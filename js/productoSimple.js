@@ -128,6 +128,7 @@ function loadProductDetails() {
         document.getElementById('buyButton').onclick = () => {
             addCarrito(product.id);
         };
+        console.log(window.addCarrito);
     } else {
         document.body.innerHTML = '<h2>Producto no encontrado</h2>';
     }

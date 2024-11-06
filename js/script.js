@@ -30,15 +30,15 @@ fetch('../componentes/Navbar/navbar.html')
         btnAboutUs.style.display = 'block';
         acceso_sesion_tablet.style.display = "none";
         btnLink_sesion.style.display = "none";
-        nameUser.innerHTML= `${user.name} ${user.lastName.charAt(0)}.`;
-        nameAccesoIcon.innerHTML= `${user.name.charAt(0).toUpperCase()}`;
+        nameUser.innerHTML= `${user.nameUser} ${user.lastName.charAt(0)}.`;
+        nameAccesoIcon.innerHTML= `${user.nameUser.charAt(0).toUpperCase()}`;
         btnIconSession.style.display = "block";
-    } else if(rol === "cliente"){
+    } else if(rol === "customer"){
         btnStock.style.display = 'none'; 
         btnLink_sesion.style.display = "none";
         acceso_sesion_tablet.style.display = "none";
-        nameUser.innerHTML= `${user.name} ${user.lastName.charAt(0)}.`;
-        nameAccesoIcon.innerHTML= `${user.name.charAt(0).toUpperCase()}`;
+        nameUser.innerHTML= `${user.nameUser} ${user.lastName.charAt(0)}.`;
+        nameAccesoIcon.innerHTML= `${user.nameUser.charAt(0).toUpperCase()}`;
         btnIconSession.style.display = "block";
     }else{
         btnStock.style.display = 'none'; 

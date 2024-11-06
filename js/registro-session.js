@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const cliente = {
       rolUser: rol.value,
       nameUser: capitalizeFirstLetter(name.value),
-      lastNameUser: capitalizeFirstLetter(lastName.value),
+      lastName: capitalizeFirstLetter(lastName.value),
       emailUser: email.value,
-      passwordUser: contrasenaCifrada
+      passwordUser: pass.value
     };
     
     
@@ -187,8 +187,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ---------- Functionality - Login ------------
 
+//--
+// ---------- Functionality - Login ------------
+
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("#login-form").addEventListener("submit", (e) => {
+  document.querySelector("#login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     let emailLogin = document.querySelector("#emailLogin");
@@ -197,26 +200,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (emailLogin.value !== "" && passLogin.value !== "") {
       const textDanger = document.querySelector("#loginError");
-      const desplazamiento = 6;
-      const user = users.find(u => u.email === emailLogin.value && descifrar(u.password , desplazamiento) === passLogin.value);
       
-    
-      if (user) {
-        const condition = true;
-        if (condition) {
+      // Crear el payload con email y password
+      const loginData = {
+        email: emailLogin.value,
+        password: passLogin.value
+      };
+
+      try {
+        // Realizar la petición a la API
+        const response = await fetch("http://localhost:8080/user/login", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(loginData)
+        });
+
+        // Manejar la respuesta de la API
+        if (response.ok) {
+          const data = await response.json();
+          
+          // Guardar los detalles del usuario en localStorage
+          localStorage.setItem("user", JSON.stringify(data));
+          localStorage.setItem('rol', data.rolUser);
+
+          // Mostrar el modal de éxito
           const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
           loginModal.show();
+
+          // Redirigir después de 2 segundos
+          setTimeout(() => {
+            window.location.href = "../../html/index.html";
+          }, 2000);
+        } else {
+          // Mostrar error si las credenciales no son válidas
+          alertUserInvalid(textDanger, emailLogin, passLogin);
         }
-        
-        localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem('rol', user.rol);
-  
-        setTimeout(() => {
-         
-          window.location.href = "../../html/index.html";
-        }, 2000);
-      }else {
-        alertUserInvalid(textDanger, emailLogin, passLogin);
+      } catch (error) {
+        console.error("Error al hacer la solicitud:", error);
+        textDanger.style.display = "block";
+        textDanger.textContent = "Error al intentar iniciar sesión. Inténtalo de nuevo.";
       }
     }
   });
@@ -226,7 +250,7 @@ function alertUserInvalid(b, d, e) {
   b.style.display = "block";
   d.value = "";
   e.value = "";
-
 }
+
 
 

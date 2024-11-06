@@ -1,5 +1,6 @@
 // Entrega tarea 8
 
+
 export default class ProductsController {
   constructor() {
     this.items = JSON.parse(localStorage.getItem("products")) || [];
@@ -17,6 +18,9 @@ export default class ProductsController {
   //       price: price,
   //       image: image
   //   };
+
+  
+
   addItem(name, scientificName, description, quantityUnit, price, img, createdAt) {
     const newItem = {
       id: this.currentid++,
@@ -28,6 +32,7 @@ export default class ProductsController {
       img: img,
       createdAt
     };
+    
 
     const exists = this.items.some((item) => item.name === name);
 

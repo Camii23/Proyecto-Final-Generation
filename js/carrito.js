@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
           await registrarDatosCarrito();
           localStorage.setItem("carroItems", JSON.stringify([]));
           setTimeout(() => {
-            window.location.href = "../../html/carrito.html";
+            window.location.href = "../../html/factura.html";
           }, 1);
         }
       } else {
@@ -298,7 +298,7 @@ async function registrarDatosCarrito() {
 
       // Redirigir al usuario a la página de facturación (si todo sale bien)
       setTimeout(() => {
-        window.location.href = "../../html/carrito.html";
+        window.location.href = "../../html/factura.html";
       }, 1);
     } else {
       console.error("Error al registrar la orden:", response.statusText);

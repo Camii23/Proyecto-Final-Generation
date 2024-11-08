@@ -51,7 +51,7 @@ fetch('../componentes/Navbar/navbar.html')
     btnLoginOut.addEventListener("click", loginOut);
     document.querySelector("#login-out-tablet").addEventListener("click", loginOut);
     //close session function
-    function loginOut(){
+     function loginOut(){
         localStorage.setItem('rol', "user");
         nameUser.innerHTML= "";
         nameAccesoIcon.innerHTML= "";
@@ -69,10 +69,13 @@ fetch('../componentes/Navbar/navbar.html')
             confirmButtonColor: '#617842'
         }).then(() => {
             setTimeout(() => {
-                window.location.href = "../../html/index.html";
+                // window.location.href = "../../html/index.html";
+                window.location.replace("../../html/index.html");
+               
             }, 3000);
         });
     }
+   
     })
 
 .catch(error => console.error('Error al cargar el Navbar:', error));

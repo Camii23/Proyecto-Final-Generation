@@ -11,41 +11,60 @@ const productos = JSON.parse(localStorage.getItem("products")) || [];
 // Obtener el usuario almacenado en localStorage
 const user = JSON.parse(localStorage.getItem(USER_KEY));
 
-if (user) {
+console.log("Usuario almacenado en localStorage:", user); // Verificar los datos del usuario en localStorage
+
+if (user && user.orders && user.orders.length > 0) {
+    // Mostrar las órdenes para depurar
+    console.log("Órdenes del usuario:", user.orders);
+
     // Obtener la última orden
-    const lastOrder = user.oders[user.oders.length - 1];
+    const lastOrder = user.orders[user.orders.length - 1];  // Asegurarse de que se obtiene la última orden
 
-    // Datos de la última orden
-    const { date, discount, subTotal, total, oderDetails } = lastOrder;
+    if (lastOrder) {
+        console.log("Última orden:", lastOrder); // Verificar la última orden
 
-    // Actualizar la factura con los datos de la última orden
-    document.getElementById('factura').textContent = `Factura de ${user.nameUser} ${user.lastName}`;
-    document.querySelector('.checkout-btn').innerHTML = `        
-        <img src="../img/background/delivery.png" alt="Delivery Icon" class="icono-envio">
-        ¡Gracias por tu compra! Tu factura será enviada a ${user.emailUser}
-    `;
+        const { date, discount, subTotal, total, oderDetails } = lastOrder;
 
-    // Mostrar la fecha de la orden
-    const formattedDate = new Date(date).toLocaleDateString("es-CO", {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
+        // Verificar si orderDetails existe y es un array con datos
+        console.log("Detalles de la última orden (orderDetails):", oderDetails);
 
-    // Mostrar los detalles de la orden en la factura
-    document.querySelector(".factura-resumen .factura-detalles").innerHTML = `
-        <p>Fecha: <span>${formattedDate}</span></p>
-        <p>Subtotal: <span>$${subTotal.toLocaleString("es-CO")}</span></p>
-        <p>Descuento (-${discount}%): <span>$${(subTotal * (discount / 100)).toLocaleString("es-CO")}</span></p>
-        <p>Envío: <span>$0.00</span></p>
-        <h4>Total: <span>$${total.toLocaleString("es-CO")}</span></h4>
-        <hr>
-    `;
+        if (Array.isArray(oderDetails) && oderDetails.length > 0) {
+            console.log("Detalles de la última orden:", oderDetails); // Verificar los detalles de la orden
 
-    // Listar los detalles de la orden (productos)
-    listarDetallesOrden(oderDetails, discount);
+            // Actualizar la factura con los datos de la última orden
+            document.getElementById('factura').textContent = `Factura de ${user.nameUser} ${user.lastName}`;
+            document.querySelector('.checkout-btn').innerHTML = `        
+                <img src="../img/background/delivery.png" alt="Delivery Icon" class="icono-envio">
+                ¡Gracias por tu compra! Tu factura será enviada a ${user.emailUser}
+            `;
+
+            // Mostrar la fecha de la orden
+            const formattedDate = new Date(date).toLocaleDateString("es-CO", {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+
+            // Mostrar los detalles de la orden en la factura
+            document.querySelector(".factura-resumen .factura-detalles").innerHTML = `
+                <p>Fecha: <span>${formattedDate}</span></p>
+                <p>Subtotal: <span>$${subTotal.toLocaleString("es-CO")}</span></p>
+                <p>Descuento (-${discount}%): <span>$${(subTotal * (discount / 100)).toLocaleString("es-CO")}</span></p>
+                <p>Envío: <span>$0.00</span></p>
+                <h4>Total: <span>$${total.toLocaleString("es-CO")}</span></h4>
+                <hr>
+            `;
+
+            // Listar los detalles de la orden (productos)
+            listarDetallesOrden(oderDetails, discount);
+        } else {
+            console.error("La última orden no tiene detalles o está vacía.");
+        }
+    } else {
+        console.error("No se encontró la última orden.");
+    }
 } else {
-    console.error("No se encontró el usuario en localStorage.");
+    console.error("No se encontró el usuario en localStorage o el usuario no tiene órdenes.");
 }
 
 // Función para listar los detalles de la orden
@@ -113,27 +132,49 @@ async function obtenerUsuarioPorId(idUser) {
     localStorage.setItem(USER_KEY, JSON.stringify(userData));
     console.log("Usuario actualizado en localStorage:", userData);
 
+    // Actualizar la factura después de obtener el usuario
+    actualizarFactura();
+
   } catch (error) {
     console.error("Error al obtener el usuario:", error);
   }
+}
+
+// Función para actualizar la factura después de obtener los datos del usuario
+function actualizarFactura() {
+    const storedUser = JSON.parse(localStorage.getItem(USER_KEY));
+    if (storedUser && storedUser.orders && storedUser.orders.length > 0) {
+        const lastOrder = storedUser.orders[storedUser.orders.length - 1];
+        const { date, discount, subTotal, total, oderDetails } = lastOrder;
+        if (Array.isArray(oderDetails) && oderDetails.length > 0) {
+            document.getElementById('factura').textContent = `Factura de ${storedUser.nameUser} ${storedUser.lastName}`;
+            document.querySelector('.checkout-btn').innerHTML = `        
+                <img src="../img/background/delivery.png" alt="Delivery Icon" class="icono-envio">
+                ¡Gracias por tu compra! Tu factura será enviada a ${storedUser.emailUser}
+            `;
+            const formattedDate = new Date(date).toLocaleDateString("es-CO", {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            document.querySelector(".factura-resumen .factura-detalles").innerHTML = `
+                <p>Fecha: <span>${formattedDate}</span></p>
+                <p>Subtotal: <span>$${subTotal.toLocaleString("es-CO")}</span></p>
+                <p>Descuento (-${discount}%): <span>$${(subTotal * (discount / 100)).toLocaleString("es-CO")}</span></p>
+                <p>Envío: <span>$0.00</span></p>
+                <h4>Total: <span>$${total.toLocaleString("es-CO")}</span></h4>
+                <hr>
+            `;
+            listarDetallesOrden(oderDetails, discount);
+        }
+    }
 }
 
 // Inicializar usuario al cargar la página
 document.addEventListener("DOMContentLoaded", function() {
   const storedUser = JSON.parse(localStorage.getItem(USER_KEY));
 
-  if (storedUser && storedUser.idUser) {
-    // Si el usuario está en localStorage, obtener datos actualizados de la API
+  if (storedUser) {
     obtenerUsuarioPorId(storedUser.idUser);
-  } else {
-    console.error("No se encontró el usuario en localStorage o falta el idUser.");
-  }
-});
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "hidden") {
-      // Vaciar el carrito cuando la página pasa a un estado oculto (al cambiar de vista)
-      localStorage.removeItem(STORAGE_KEY);
-      carroItems = {};
   }
 });

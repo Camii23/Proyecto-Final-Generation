@@ -4,6 +4,7 @@
 import productsController from "./productsController.js";
 
 const itemsController = new productsController();
+
 //---
 const STORAGE_KEY = "carroItems";
 const PRODUCTS_KEY = "products"; // Asegúrate de tener la clave correcta para los productos

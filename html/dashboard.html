@@ -22,9 +22,9 @@
   <div>
       <div id="Navbar"></div>
   </div>
-
+<h2 class="ml-4">Stock de Productos </h2>
   <div class="boton-1">
-      <button type="button" class="btn btn-add-producto" data-bs-toggle="modal" data-bs-target="#biobugModal" data-bs-whatever="@mdo">Agregar producto</button>
+      <button type="button" class="btn btn-add-producto" data-bs-toggle="modal" data-bs-target="#biobugModal" data-bs-whatever="@mdo" id="btnBigAdd">Agregar producto</button>
   </div>
   
   <div class="modal fade" id="biobugModal" tabindex="-1" aria-labelledby="biobugModalLabel" aria-hidden="true">
@@ -66,11 +66,32 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" id="cancel-button">Cancelar</button>
           <button type="button" class="btn btn-primary" id="add-button">Agregar</button>
+          <button type="button" class="btn btn-primary" id="edit-button">Actualizar</button>
         </div>
       </div>
     </div>
   </div>
   
+
+  <!-- Tabla de productos -->
+<div class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Nombre Científico</th>
+        <th>Descripción</th>
+        <th>Pack</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="product-list">
+      <!-- Los productos se cargarán aquí dinámicamente -->
+    </tbody>
+  </table>
+</div>
 
   <!-- FOOTER -->
   <div>
@@ -81,8 +102,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+
+
+     
   <script src="./../js/script.js"></script>
-  <script type="module" src="./../js/dashboard.js"></script>
+  <script type="module" src="./../js/dash.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 

@@ -1,47 +1,86 @@
-// Entrega tarea 8
 
-export default class ProductsController {
+
+class ProductsController {
   constructor() {
-    this.items = JSON.parse(localStorage.getItem("products")) || [];
-    this.currentid =
-      this.items.length > 0 ? this.items[this.items.length - 1].id + 1 : 1;
+    this.items = [];
+    this.baseUrl = 'http://localhost:8080/product';
   }
 
-  // addItem(name, scientificName, description, quantity, price, image) {
-  //   const newItem = {
-  //       id: this.currentid++, // Genera un nuevo ID
-  //       name: name,
-  //       scientificName: scientificName,
-  //       description: description,
-  //       quantity: quantity,
-  //       price: price,
-  //       image: image
-  //   };
-  addItem(name, scientificName, description, quantityUnit, price, img, createdAt) {
-    const newItem = {
-      id: this.currentid++,
-      name: name,
-      scientificName: scientificName,
-      description: description,
-      quantityUnit: quantityUnit,
-      price: price,
-      img: img,
-      createdAt
-    };
-
-    const exists = this.items.some((item) => item.name === name);
-
-    if (!exists) {
-      this.items.push(newItem);
-      this.saveItemsToLocalStorage();
+  async getProducts() {
+    try {
+      const response = await fetch(this.baseUrl);
+      if (!response.ok) throw new Error('Error al obtener los productos');
+      this.items = await response.json();
+      return this.items;
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
     }
   }
 
-  saveItemsToLocalStorage() {
-    localStorage.setItem("products", JSON.stringify(this.items));
+  async addItem(name, scientificName, description, quantity, price, imageBase64) {
+    try {
+      const response = await fetch(this.baseUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nameProduct: name,
+          scientificName: scientificName,
+          description: description,
+          unitsPackage: parseInt(quantity),
+          price: parseFloat(price),
+          img: imageBase64,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Error al agregar el producto');
+      const newProduct = await response.json();
+      this.items.push(newProduct);
+      return newProduct;
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
   }
 
-  loadItemsFromLocalStorage() {
-    this.items = JSON.parse(localStorage.getItem("products")) || [];
+  async editProduct(product) {
+    try {
+      const response = await fetch(this.baseUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
+      });
+
+      if (!response.ok) throw new Error('Error al editar el producto');
+      const updatedProduct = await response.json();
+      const index = this.items.findIndex(item => item.idProduct === updatedProduct.idProduct);
+      if (index !== -1) {
+        this.items[index] = updatedProduct;
+      }
+      return updatedProduct;
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
+  }
+
+  async deleteProduct(productId) {
+    try {
+      const response = await fetch(`${this.baseUrl}/${productId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) throw new Error('Error al eliminar el producto');
+      this.items = this.items.filter(item => item.idProduct !== productId);
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
   }
 }
+
+export default ProductsController;

@@ -22,7 +22,7 @@
   <div>
       <div id="Navbar"></div>
   </div>
-
+<h2 class="ml-4">Stock de Productos </h2>
   <div class="boton-1">
       <button type="button" class="btn btn-add-producto" data-bs-toggle="modal" data-bs-target="#biobugModal" data-bs-whatever="@mdo">Agregar producto</button>
   </div>
@@ -71,6 +71,26 @@
     </div>
   </div>
   
+
+  <!-- Tabla de productos -->
+<div class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Nombre Científico</th>
+        <th>Descripción</th>
+        <th>Pack</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="product-list">
+      <!-- Los productos se cargarán aquí dinámicamente -->
+    </tbody>
+  </table>
+</div>
 
   <!-- FOOTER -->
   <div>

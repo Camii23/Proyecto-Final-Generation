@@ -34,7 +34,7 @@ function addCarrito(idItem) {
       cancelButtonColor: '#B84450'
     }).then((result) => {
       if (result.isConfirmed) {
-          window.location.href = "carrito.html";
+          window.location.href = "docs/carrito.html";
       }
     });
   }

@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
         setTimeout(() => {
          
-          window.location.href = "../../docs/index.html";
+          window.location.href = "./../../index.html";
         }, 2000);
       }else {
         alertUserInvalid(textDanger, emailLogin, passLogin);

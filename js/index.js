@@ -12,7 +12,7 @@ function addItemCard(item) {
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.description}</p>
                 <h5 class="card-text">$ ${item.price.toLocaleString('es-CO')}</h5>
-                <button class="btn btn-buy" onclick="window.location.href='productoSimple.html?id=${item.id}'">Ver Detalles</button>
+                <button class="btn btn-buy" onclick="window.location.href='docs/productoSimple.html?id=${item.id}'">Ver Detalles</button>
                 <button href="#" class="btn btn-buy" onclick="addCarrito('${item.id}')">Comprar</button>
             </div>
         </div>

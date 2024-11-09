@@ -1,11 +1,20 @@
 body {
+
     font-family: 'Poppins', sans-serif;
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
+
+    
+    background-image: url("../img/background/factura.png");
+    background-size: cover; /* Cambiado a cover */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: left;
+    max-height: 700px;
+    background-attachment: fixed;
   }
-
-
+  
 .btn-add-producto {
     background-color: #617842;
     color: #ffffff;
@@ -43,3 +52,10 @@ body {
 }
 
 
+.dashboarddd {
+    background-color: #FFFEF9;
+    border: 2px solid #FFFEF9; /* Borde con un tono más oscuro para contraste */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    padding: 40px !important; /* Espacio interior para que el contenido no toque el borde */
+}

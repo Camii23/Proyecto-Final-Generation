@@ -69,7 +69,7 @@ fetch('../componentes/Navbar/navbar.html')
             confirmButtonColor: '#617842'
         }).then(() => {
             setTimeout(() => {
-                window.location.href = "../../html/index.html";
+                window.location.href = "../../docs/index.html";
             }, 3000);
         });
     }

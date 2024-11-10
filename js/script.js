@@ -1,6 +1,9 @@
 
+// Detecta si estás en el index o en una página dentro de "docs"
+const basePath = window.location.pathname.includes('/docs/') ? '../' : '';
+
 // Cargar el contenido del Navbar con DOM
-fetch('./componentes/Navbar/navbar.html')
+fetch(`${basePath}componentes/Navbar/navbar.html`)
     .then(response => response.text())
     .then(data => {
     document.getElementById('Navbar').innerHTML = data;
@@ -8,7 +11,7 @@ fetch('./componentes/Navbar/navbar.html')
     //Enlace para el archivo CSS del Navbar
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = './componentes/Navbar/navbar.css';
+    link.href = `${basePath}componentes/Navbar/navbar.css`;
     document.head.appendChild(link);
 
     //perfil-session
@@ -61,6 +64,7 @@ fetch('./componentes/Navbar/navbar.html')
         btnStock.style.display = "none";
         btnIconSession.style.display = "none";
         btnLink_sesion.style.display = "block";
+        const redirectionPath = window.location.pathname.includes('/docs/') ? '../index.html' : './index.html';
 
         Swal.fire({
             icon: 'info',
@@ -69,7 +73,7 @@ fetch('./componentes/Navbar/navbar.html')
             confirmButtonColor: '#617842'
         }).then(() => {
             setTimeout(() => {
-                window.location.href = "./../../index.html";
+                window.location.href = `${basePath}index.html`;
             }, 3000);
         });
     }
@@ -79,7 +83,7 @@ fetch('./componentes/Navbar/navbar.html')
 
 
     // Cargar el contenido del footer con DOM
-fetch('./componentes/Footer/footer.html')
+    fetch(`${basePath}componentes/Footer/footer.html`)
     .then(response => response.text())
     .then(data => {
     document.getElementById('footer').innerHTML = data;
@@ -87,7 +91,7 @@ fetch('./componentes/Footer/footer.html')
     // Enlace para el archivo CSS del footer
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = './componentes/Footer/footer.css';
+    link.href = `${basePath}componentes/Footer/footer.css`;
     document.head.appendChild(link);
     })
 .catch(error => console.error('Error al cargar el footer:', error));

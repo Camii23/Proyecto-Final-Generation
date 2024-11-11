@@ -12,7 +12,7 @@ const getImagePath = (imgPath) => {
     : `./${cleanedPath}`;
   return finalPath;
 };
-z
+
 function addItemCard(item) {
   const itemHTML = `
         <div class="card h-100" style="width: 20rem;">

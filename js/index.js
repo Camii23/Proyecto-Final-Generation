@@ -22,7 +22,7 @@ function addItemCard(item) {
   itemsContainer.innerHTML += itemHTML;
 }
 // Determinar la base de la ruta dependiendo de si estamos en index.html o en una página dentro de docs
-const imgBasePath = window.location.pathname.includes('/docs/') ? '../img/insects/' : './img/insects/';
+const imgBasePath = window.location.pathname.includes('/docs/') ? '../img/insects/' : '/img/insects/';
 
 // Lista de productos con rutas dinámicas
 const products = [

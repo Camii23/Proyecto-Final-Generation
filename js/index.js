@@ -6,15 +6,11 @@ import productsController from "./productsController.js";
 const itemsController = new productsController();
 
 const getImagePath = (imgPath) => {
-  // Limpiar la ruta si comienza con "./" o "../"
   const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.startsWith('./') ? imgPath.slice(2) : imgPath;
-
-  // Construir la ruta correcta en función del entorno
   const finalPath = window.location.hostname.includes('github.io') 
     ? `/Proyecto-Final-Generation.github.io/${cleanedPath}`
     : `./${cleanedPath}`;
-  
-  console.log(`Ruta final de la imagen para ${imgPath}:`, finalPath); // Imprime la ruta final
+  console.log(`Ruta final de la imagen para ${imgPath}:`, finalPath);
   return finalPath;
 };
 

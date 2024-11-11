@@ -21,7 +21,7 @@ function addItemCard(item) {
   const itemsContainer = document.getElementById("list-items");
   itemsContainer.innerHTML += itemHTML;
 }
-
+const basePath = window.location.pathname.includes('/docs/') ? '../' : './';
 const products = [
   {
     name: "Crisopas",
@@ -30,7 +30,7 @@ const products = [
       "Depredadoras voraces de pulgones, ácaros, trips y otros pequeños insectos. Útiles en amplia gama de cultivos y entornos.",
     quantityUnit: "500 Larvas.",
     price: 100000,
-    img: "./img/insects/crisopas.jpg",
+    img: `${basePath}img/insects/crisopas.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -40,7 +40,7 @@ const products = [
       "Parasitan los huevos de muchas plagas, incluyendo polillas y gusanos. Eficaces para prevenir infestaciones en cultivos.",
     quantityUnit: "100 Insectos",
     price: 80000,
-    img: "./img/insects/avispas-parasitoides.jpg",
+    img: `${basePath}img/insects/avispas-parasitoides.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -50,7 +50,7 @@ const products = [
       "Depredador natural de la araña roja, una plaga común en cultivos bajo invernadero. Controla infestaciones rápidamente.",
     quantityUnit: "80 Insectos",
     price: 160000,
-    img: "./img/insects/acaro-depredador.jpg",
+    img: `${basePath}img/insects/acaro-depredador.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -60,7 +60,7 @@ const products = [
       "Depredadoras de pulgones, ácaros y otros insectos blandos. Son populares por su eficacia y facilidad de uso.",
     quantityUnit: "90 Insectos",
     price: 120000,
-    img: "./img/insects/mariquitas.jpg",
+    img: `${basePath}img/insects/mariquitas.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -70,7 +70,7 @@ const products = [
       "Utilizada para control de desechos orgánicos y biológicos, sus larvas degradan residuos y reducen proliferación de plagas.",
     quantityUnit: "100 Insectos",  
     price: 110000,
-    img: "./img/insects/mosca-soldado-negra.jpg",
+    img: `${basePath}img/insects/mosca-soldado-negra.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -80,7 +80,7 @@ const products = [
       "Se alimenta de orugas, procesionaria del pino y otras plagas forestales, siendo útil en ambientes al aire libre.",
     quantityUnit: "100 Insectos",  
     price: 110000,
-    img: "./img/insects/escarabajo-tigre.jpg",
+    img: `${basePath}img/insects/escarabajo-tigre.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -90,7 +90,7 @@ const products = [
       "Se especializan en atacar pulgones, inyectándoles una toxina paralizante antes de alimentarse de ellos.",
     quantityUnit: "120 Insectos",
     price: 150000,
-    img: "./img/insects/mosca-depredadora.jpg",
+    img: `${basePath}img/insects/mosca-depredadora.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -100,7 +100,7 @@ const products = [
       "Depredador eficaz contra trips, ácaros y pulgones. Funciona en cultivos con flores de polen, como los ornamentales.",
     quantityUnit: "50 Insectos",  
     price: 200000,
-    img: "./img/insects/chinche-pirata.jpg",
+    img: `${basePath}img/insects/chinche-pirata.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -110,7 +110,7 @@ const products = [
       "Depredador eficaz contra babosas, orugas y otras plagas de suelo. Ideal para cultivos al aire libre.",
     quantityUnit: "20 Insectos",  
     price: 100000,
-    img: "./img/insects/escarabajo-terrestre.jpg",
+    img: `${basePath}img/insects/escarabajo-terrestre.jpg`,
     createdAt: "2020-09-20"
   },
   {
@@ -120,7 +120,7 @@ const products = [
       "Utilizado en cultivos de frutas y hortalizas. Eficaz contra el combate de cochinillas algodonosas.",
     quantityUnit: "50 Adultos",
     price: 240000,
-    img: "./img/insects/escarabajo-depredador.jpg",
+    img: `${basePath}img/insects/escarabajo-depredador.jpg`,
     createdAt: "2020-09-20"
   },
 ];
@@ -176,4 +176,3 @@ loadCardsListFromItemsController();
     // Redirigir a la página del carrito
     window.location.href = 'carrito.html';
 }
-

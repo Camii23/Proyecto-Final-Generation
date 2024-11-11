@@ -8,11 +8,11 @@ const itemsController = new productsController();
 const getImagePath = (imgPath) => {
   const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.startsWith('./') ? imgPath.slice(2) : imgPath;
   const finalPath = window.location.hostname.includes('github.io') 
-    ? `/Proyecto-Final-Generation.github.io/${imgPath}`
+    ? `/Proyecto-Final-Generation.github.io/${cleanedPath}`
     : `./${cleanedPath}`;
   return finalPath;
 };
-
+z
 function addItemCard(item) {
   const itemHTML = `
         <div class="card h-100" style="width: 20rem;">

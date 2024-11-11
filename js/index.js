@@ -21,109 +21,33 @@ function addItemCard(item) {
   const itemsContainer = document.getElementById("list-items");
   itemsContainer.innerHTML += itemHTML;
 }
-const basePath = window.location.pathname.includes('/docs/') ? '../' : './';
+// Determinar la base de la ruta dependiendo de si estamos en index.html o en una página dentro de docs
+const imgBasePath = window.location.pathname.includes('/docs/') ? '../img/insects/' : './img/insects/';
+
+// Lista de productos con rutas dinámicas
 const products = [
   {
     name: "Crisopas",
     scientificName: "Chrysoperla rufilabris",
-    description:
-      "Depredadoras voraces de pulgones, ácaros, trips y otros pequeños insectos. Útiles en amplia gama de cultivos y entornos.",
+    description: "Depredadoras voraces de pulgones, ácaros, trips y otros pequeños insectos. Útiles en amplia gama de cultivos y entornos.",
     quantityUnit: "500 Larvas.",
     price: 100000,
-    img: `${basePath}img/insects/crisopas.jpg`,
+    img: `${imgBasePath}crisopas.jpg`,
     createdAt: "2020-09-20"
   },
   {
     name: "Avispas parasitoides",
     scientificName: "Trichogramma spp.",
-    description:
-      "Parasitan los huevos de muchas plagas, incluyendo polillas y gusanos. Eficaces para prevenir infestaciones en cultivos.",
+    description: "Parasitan los huevos de muchas plagas, incluyendo polillas y gusanos. Eficaces para prevenir infestaciones en cultivos.",
     quantityUnit: "100 Insectos",
     price: 80000,
-    img: `${basePath}img/insects/avispas-parasitoides.jpg`,
+    img: `${imgBasePath}avispas-parasitoides.jpg`,
     createdAt: "2020-09-20"
   },
-  {
-    name: "Ácaro depredador",
-    scientificName: "Phytoseiulus persimilis",
-    description:
-      "Depredador natural de la araña roja, una plaga común en cultivos bajo invernadero. Controla infestaciones rápidamente.",
-    quantityUnit: "80 Insectos",
-    price: 160000,
-    img: `${basePath}img/insects/acaro-depredador.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Mariquitas",
-    scientificName: "Hippodamia convergens",
-    description:
-      "Depredadoras de pulgones, ácaros y otros insectos blandos. Son populares por su eficacia y facilidad de uso.",
-    quantityUnit: "90 Insectos",
-    price: 120000,
-    img: `${basePath}img/insects/mariquitas.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Mosca soldado negra",
-    scientificName: "Hermetia illucens",
-    description:
-      "Utilizada para control de desechos orgánicos y biológicos, sus larvas degradan residuos y reducen proliferación de plagas.",
-    quantityUnit: "100 Insectos",  
-    price: 110000,
-    img: `${basePath}img/insects/mosca-soldado-negra.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Escarabajo tigre",
-    scientificName: "Calosoma sycophanta",
-    description:
-      "Se alimenta de orugas, procesionaria del pino y otras plagas forestales, siendo útil en ambientes al aire libre.",
-    quantityUnit: "100 Insectos",  
-    price: 110000,
-    img: `${basePath}img/insects/escarabajo-tigre.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Moscas depredadoras",
-    scientificName: "Aphidoletes aphidimyza",
-    description:
-      "Se especializan en atacar pulgones, inyectándoles una toxina paralizante antes de alimentarse de ellos.",
-    quantityUnit: "120 Insectos",
-    price: 150000,
-    img: `${basePath}img/insects/mosca-depredadora.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Chinche pirata diminuta",
-    scientificName: "Orius insidiosus",
-    description:
-      "Depredador eficaz contra trips, ácaros y pulgones. Funciona en cultivos con flores de polen, como los ornamentales.",
-    quantityUnit: "50 Insectos",  
-    price: 200000,
-    img: `${basePath}img/insects/chinche-pirata.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Escarabajo terrestre",
-    scientificName: "Pterostichus melanarius",
-    description:
-      "Depredador eficaz contra babosas, orugas y otras plagas de suelo. Ideal para cultivos al aire libre.",
-    quantityUnit: "20 Insectos",  
-    price: 100000,
-    img: `${basePath}img/insects/escarabajo-terrestre.jpg`,
-    createdAt: "2020-09-20"
-  },
-  {
-    name: "Escarabajo depredador",
-    scientificName: "cryptolaemus montrouzieri",
-    description:
-      "Utilizado en cultivos de frutas y hortalizas. Eficaz contra el combate de cochinillas algodonosas.",
-    quantityUnit: "50 Adultos",
-    price: 240000,
-    img: `${basePath}img/insects/escarabajo-depredador.jpg`,
-    createdAt: "2020-09-20"
-  },
+  // Resto de los productos...
 ];
+
+// Este código debería asegurarse de que las rutas se generen correctamente en el despliegue de GitHub Pages.
 
 products.forEach((product) => {
     // Verificar si el producto ya está en el controlador

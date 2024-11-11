@@ -6,11 +6,13 @@ import productsController from "./productsController.js";
 const itemsController = new productsController();
 
 const getImagePath = (imgPath) => {
-  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(1) : imgPath;
-  return window.location.pathname.includes('index.html') ? `.${cleanedPath}` : `..${cleanedPath}`;
- 
+  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath;
+  const finalPath = window.location.pathname.includes('index.html') ? `./${cleanedPath}` : `../${cleanedPath}`;
+  console.log(`Ruta ${imgPath}:`, finalPath); 
+  return finalPath;
 };
-console.log(getImagePath(item.img));
+
+
 function addItemCard(item) {
   const itemHTML = `
         <div class="card h-100" style="width: 20rem;">

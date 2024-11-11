@@ -6,12 +6,16 @@ import productsController from "./productsController.js";
 const itemsController = new productsController();
 
 const getImagePath = (imgPath) => {
-  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(4) : imgPath;
-  const finalPath = window.location.pathname.includes('index.html') ? `/${cleanedPath}` : `../${cleanedPath}`;
-  console.log(`Russssssta ${imgPath}:`, finalPath); 
+  // Obtener la URL base
+  const baseUrl = window.location.origin;
+  
+  // Construir una ruta absoluta basada en la URL base y el nombre de la imagen
+  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.slice(2); // ajusta si necesario
+  const finalPath = `${baseUrl}/${cleanedPath}`;
+
+  console.log(`Ruta final de la imagen para ${imgPath}:`, finalPath); // Imprime la ruta final
   return finalPath;
 };
-
 
 function addItemCard(item) {
   const itemHTML = `

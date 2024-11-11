@@ -21,7 +21,7 @@ function addItemCard(item) {
   const itemsContainer = document.getElementById("list-items");
   itemsContainer.innerHTML += itemHTML;
 }
-const basePath = window.location.pathname.includes('/docs/') ? '../' : '';
+const basePath = window.location.pathname.includes('/docs/') ? '../' : './';
 const products = [
   {
     name: "Crisopas",

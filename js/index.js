@@ -8,7 +8,7 @@ const itemsController = new productsController();
 const getImagePath = (imgPath) => {
   const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(4) : imgPath;
   const finalPath = window.location.pathname.includes('index.html') ? `/${cleanedPath}` : `../${cleanedPath}`;
-  console.log(`Ruta ${imgPath}:`, finalPath); 
+  console.log(`Russssssta ${imgPath}:`, finalPath); 
   return finalPath;
 };
 

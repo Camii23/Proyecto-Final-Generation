@@ -1,12 +1,16 @@
 // Entrega tarea 8
+// Entrega tarea 8
 
 import productsController from "./productsController.js";
 
 const itemsController = new productsController();
-const getImagePath = (imgPath) => {
-  return window.location.pathname.includes('index.html') ? `./${imgPath}` : `../${imgPath}`;
-};
 
+const getImagePath = (imgPath) => {
+  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(1) : imgPath;
+  return window.location.pathname.includes('index.html') ? `.${cleanedPath}` : `..${cleanedPath}`;
+ 
+};
+console.log(getImagePath(item.img));
 function addItemCard(item) {
   const itemHTML = `
         <div class="card h-100" style="width: 20rem;">

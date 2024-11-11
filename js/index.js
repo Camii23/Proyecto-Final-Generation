@@ -6,17 +6,17 @@ import productsController from "./productsController.js";
 const itemsController = new productsController();
 
 const getImagePath = (imgPath) => {
-  // Obtener la URL base y ajustar según el entorno
-  const baseUrl = window.location.origin + (window.location.hostname.includes('github.io') ? '/Proyecto-Final-Generation.github.io' : '');
+  // Limpiar la ruta si comienza con "./" o "../"
+  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.startsWith('./') ? imgPath.slice(2) : imgPath;
 
-  // Ajustar la ruta si comienza con "./" o "../"
-  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.slice(2);
-  const finalPath = `${baseUrl}/img/insects/${cleanedPath}`;
-
+  // Construir la ruta correcta en función del entorno
+  const finalPath = window.location.hostname.includes('github.io') 
+    ? `/Proyecto-Final-Generation.github.io/${cleanedPath}`
+    : `./${cleanedPath}`;
+  
   console.log(`Ruta final de la imagen para ${imgPath}:`, finalPath); // Imprime la ruta final
   return finalPath;
 };
-
 
 function addItemCard(item) {
   const itemHTML = `

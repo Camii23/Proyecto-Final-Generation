@@ -21,7 +21,7 @@ function addItemCard(item) {
   const itemsContainer = document.getElementById("list-items");
   itemsContainer.innerHTML += itemHTML;
 }
-const basePath = window.location.pathname.includes('/docs/') ? '../' : './';
+const basePath = window.location.pathname.includes('/docs/') ? '../' : '../';
 const products = [
   {
     name: "Crisopas",
@@ -124,6 +124,8 @@ const products = [
     createdAt: "2020-09-20"
   },
 ];
+// Verifica la salida de basePath
+console.log("basePath:", basePath);
 
 products.forEach((product) => {
     // Verificar si el producto ya está en el controlador

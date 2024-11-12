@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
               timer: 2000
           });
           setTimeout(() => {
-              window.location.href = "/Proyecto-Final-Generation.github.io/index.html";
+              window.location.href = "/Proyecto-Final-Generation.github.io/docs/iniciosesion.html";
           }, 1);
       }
   });

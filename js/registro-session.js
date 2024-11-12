@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pass.value = "";
       setTimeout(() => {
 
-        window.location.href = "../../docs/iniciosesion.html";
+        window.location.href = "docs/iniciosesion.html";
       }, 3000);
 
     }
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
         setTimeout(() => {
          
-          window.location.href = "./../../index.html";
+          window.location.href = "index.html";
         }, 2000);
       }else {
         alertUserInvalid(textDanger, emailLogin, passLogin);

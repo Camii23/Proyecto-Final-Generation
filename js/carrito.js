@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
               });
               await registrarDatosCarrito();
               setTimeout(() => {
-                  window.location.href = "../../docs/factura.html";
+                  window.location.href = "docs/factura.html";
               }, 1);
           }
       } else {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
               timer: 2000
           });
           setTimeout(() => {
-              window.location.href = "../../docs/iniciosesion.html";
+              window.location.href = "docs/iniciosesion.html";
           }, 1);
       }
   });

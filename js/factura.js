@@ -9,16 +9,18 @@ let carroItems = cargarCarroDesdeLocalStorage() || {};
 
 // cargamos los productos para ver que todo ok
 console.log(itemsController.items);
- 
-const user = JSON.parse(localStorage.getItem('user'));
+
+const user = JSON.parse(localStorage.getItem("user"));
 if (user) {
-    document.getElementById('factura').textContent = `Factura de ${user.name} ${user.lastName} `;
-    document.querySelector('.checkout-btn').innerHTML = `
+  document.getElementById(
+    "factura"
+  ).textContent = `Factura de ${user.name} ${user.lastName} `;
+  document.querySelector(".checkout-btn").innerHTML = `
         <img src="../img/background/delivery.png" alt="Delivery Icon" class="icono-envio">
         ¡Gracias por tu compra! Tu factura será enviada a ${user.email}
     `;
 } else {
-    console.error("No se encontró el usuario en localStorage.");
+  console.error("No se encontró el usuario en localStorage.");
 }
 
 listarCarro();
@@ -55,9 +57,9 @@ function listarCarro() {
   //Funcion fecha:
   const today = new Date();
   const formattedDate = today.toLocaleDateString("es-CO", {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
   });
 
   document.querySelector(".factura-resumen .factura-detalles").innerHTML = `
@@ -77,8 +79,8 @@ function cargarCarroDesdeLocalStorage() {
 
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") {
-      // Vaciar el carrito cuando la página pasa a un estado oculto (al cambiar de vista)
-      localStorage.removeItem(STORAGE_KEY);
-      carroItems = {};
+    // Vaciar el carrito cuando la página pasa a un estado oculto (al cambiar de vista)
+    localStorage.removeItem(STORAGE_KEY);
+    carroItems = {};
   }
 });

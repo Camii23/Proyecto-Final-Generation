@@ -9,7 +9,6 @@ let carroItems = cargarCarroDesdeLocalStorage() || {};
 
 // cargamos los productos para ver que todo ok
 console.log(itemsController.items);
- 
 
 function addCarrito(idItem) {
   if (!carroItems[idItem]) {
@@ -20,21 +19,24 @@ function addCarrito(idItem) {
   }
   guardarCarroEnLocalStorage();
 
-  if (window.location.pathname.includes("productoSimple.html") || window.location.pathname.includes("carrito.html")) {
+  if (
+    window.location.pathname.includes("productoSimple.html") ||
+    window.location.pathname.includes("carrito.html")
+  ) {
     window.location.href = "carrito.html";
   } else {
     Swal.fire({
-      icon: 'success',
-      title: 'Producto añadido al carrito!',
-      text: '¿Qué quieres hacer a continuación?',
+      icon: "success",
+      title: "Producto añadido al carrito!",
+      text: "¿Qué quieres hacer a continuación?",
       showCancelButton: true,
-      confirmButtonText: 'Ir al carrito',
-      cancelButtonText: 'Explorar más',
-      confirmButtonColor: '#617842',
-      cancelButtonColor: '#B84450'
+      confirmButtonText: "Ir al carrito",
+      cancelButtonText: "Explorar más",
+      confirmButtonColor: "#617842",
+      cancelButtonColor: "#B84450",
     }).then((result) => {
       if (result.isConfirmed) {
-          window.location.href = "docs/carrito.html";
+        window.location.href = "docs/carrito.html";
       }
     });
   }
@@ -124,74 +126,73 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarCarro();
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const checkoutButton = document.querySelector('.checkout-btn');
+document.addEventListener("DOMContentLoaded", function () {
+  const checkoutButton = document.querySelector(".checkout-btn");
 
-  checkoutButton.addEventListener('click', async () => {
-
+  checkoutButton.addEventListener("click", async () => {
     if (Object.keys(carroItems).length === 0) {
       await Swal.fire({
-          icon: 'info',
-          title: 'Carrito vacío',
-          text: 'No ha agregado productos al carrito.',
-          confirmButtonColor: '#617842',
-          showConfirmButton: false,
-          timer: 2000
+        icon: "info",
+        title: "Carrito vacío",
+        text: "No ha agregado productos al carrito.",
+        confirmButtonColor: "#617842",
+        showConfirmButton: false,
+        timer: 2000,
       });
       return; // Evita continuar si el carrito está vacío
-  }
-  
-      await Swal.fire({
-          title: 'Comprobando datos',
-          html: '<div class="spinner"></div>',
-          showConfirmButton: false,
-          allowOutsideClick: false,
-          timer: 1500
-      });
+    }
 
-      const user = JSON.parse(localStorage.getItem("user"));
-      
-      if (user) {
-          if (user.rol === 'admin') {
-              await Swal.fire({
-                  icon: 'error',
-                  title: 'Acceso Restringido',
-                  text: 'Acción no permitida para administradores.',
-                  confirmButtonColor: '#617842',
-                  showConfirmButton: false,
-                  timer: 2000
-              });
-          } else if (user.rol === 'cliente') {
-              await Swal.fire({
-                  icon: 'success',
-                  title: 'Generando factura',
-                  text: 'Redirigiendo a la página de facturación...',
-                  confirmButtonColor: '#617842',
-                  showConfirmButton: false,
-                  timer: 2000
-              });
-              await registrarDatosCarrito();
-              setTimeout(() => {
-                  window.location.href = "/Proyecto-Final-Generation.github.io/docs/factura.html";
-              }, 1);
-          }
-      } else {
-          console.log("Usuario no encontrado en el localStorage.");
-          await Swal.fire({
-              icon: 'warning',
-              title: 'Por favor inicie sesión',
-              text: 'Debe iniciar sesión para completar la compra.',
-              confirmButtonColor: '#617842',
-              showConfirmButton: false,
-              timer: 2000
-          });
-          setTimeout(() => {
-              window.location.href = "/Proyecto-Final-Generation.github.io/docs/iniciosesion.html";
-          }, 1);
+    await Swal.fire({
+      title: "Comprobando datos",
+      html: '<div class="spinner"></div>',
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      timer: 1500,
+    });
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      if (user.rol === "admin") {
+        await Swal.fire({
+          icon: "error",
+          title: "Acceso Restringido",
+          text: "Acción no permitida para administradores.",
+          confirmButtonColor: "#617842",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      } else if (user.rol === "cliente") {
+        await Swal.fire({
+          icon: "success",
+          title: "Generando factura",
+          text: "Redirigiendo a la página de facturación...",
+          confirmButtonColor: "#617842",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        await registrarDatosCarrito();
+        setTimeout(() => {
+          window.location.href =
+            "/Proyecto-Final-Generation.github.io/docs/factura.html";
+        }, 1);
       }
+    } else {
+      console.log("Usuario no encontrado en el localStorage.");
+      await Swal.fire({
+        icon: "warning",
+        title: "Por favor inicie sesión",
+        text: "Debe iniciar sesión para completar la compra.",
+        confirmButtonColor: "#617842",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      setTimeout(() => {
+        window.location.href =
+          "/Proyecto-Final-Generation.github.io/docs/iniciosesion.html";
+      }, 1);
+    }
   });
 });
 
-async function registrarDatosCarrito() {
-
-}
+async function registrarDatosCarrito() {}

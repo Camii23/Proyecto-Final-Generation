@@ -84,6 +84,24 @@ function validatePassword(password) {
 const baseURL = "http://localhost:8080/user";
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+  // usuario admin por defecto
+  if (users.length === 0) {
+    const adminUser = {
+      rolUser: "admin",
+      nameUser: "Admin",
+      lastNameUser: "Admin",
+      emailUser: "admin@gmail.com",
+      passwordUser: "Admin123."
+    };
+
+    users.push(adminUser);
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+
+
   document.getElementById("form-register").addEventListener("submit", async function (e) {
     e.preventDefault();
     const name = document.querySelector("#name");

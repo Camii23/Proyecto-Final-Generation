@@ -6,10 +6,18 @@ import productsController from "./productsController.js";
 const itemsController = new productsController();
 
 const getImagePath = (imgPath) => {
-  const cleanedPath = imgPath.startsWith('../') ? imgPath.slice(3) : imgPath.startsWith('./') ? imgPath.slice(2) : imgPath;
+  if (imgPath.startsWith('data:image/')) {
+    return imgPath; 
+  }
+  const cleanedPath = imgPath.startsWith('../') 
+    ? imgPath.slice(3) 
+    : imgPath.startsWith('./') 
+    ? imgPath.slice(2) 
+    : imgPath;
   const finalPath = window.location.hostname.includes('github.io') 
     ? `/Proyecto-Final-Generation.github.io/${cleanedPath}`
     : `./${cleanedPath}`;
+  
   return finalPath;
 };
 

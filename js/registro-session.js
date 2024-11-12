@@ -36,7 +36,7 @@ togglePass.addEventListener("click", () => {
   })
 })()
 
-
+const desplazamiento = 6;
 //contraseña cifrada
 function cifrar(texto, desplazamiento) {
   let resultado = '';
@@ -79,28 +79,29 @@ function validatePassword(password) {
   return password.length >= minLength && hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
 }
 
+
 // -------------- Functiolality - Register -----------------
 
 const baseURL = "http://localhost:8080/user";
 
 document.addEventListener('DOMContentLoaded', function () {
-
+  
+      
   const users = JSON.parse(localStorage.getItem("users") || "[]");
 
   // usuario admin por defecto
   if (users.length === 0) {
     const adminUser = {
-      rolUser: "admin",
-      nameUser: "Admin",
-      lastNameUser: "Admin",
-      emailUser: "admin@gmail.com",
-      passwordUser: "Admin123."
+      rol: "admin",
+      name: "Admin",
+      lastName: "Admin",
+      email: "admin@gmail.com",
+     password: cifrar("Admin123.", desplazamiento),
     };
-
+  
     users.push(adminUser);
     localStorage.setItem("users", JSON.stringify(users));
   }
-
 
   document.getElementById("form-register").addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -159,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const person = new Persona(capitalizeFirstLetter(name.value), capitalizeFirstLetter(lastName.value), email.value, contrasenaCifrada, rol.value);
       users.push(person);
       localStorage.setItem("users", JSON.stringify(users));
+
 
       try {
         const response = await fetch(`${baseURL}/create`, {
